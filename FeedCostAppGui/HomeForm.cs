@@ -16,5 +16,10 @@ namespace FeedCostAppGui
         {
             InitializeComponent();
         }
+
+        private void btnAddCow_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

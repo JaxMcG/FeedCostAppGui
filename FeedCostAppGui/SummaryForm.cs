@@ -16,5 +16,10 @@ namespace FeedCostAppGui
         {
             InitializeComponent();
         }
+
+        private void SummaryForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

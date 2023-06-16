@@ -16,5 +16,10 @@ namespace FeedCostAppGui
         {
             InitializeComponent();
         }
+
+        private void lblAddCowTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
