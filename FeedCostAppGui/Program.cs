@@ -14,11 +14,11 @@ namespace FeedCostAppGui
         [STAThread]
         static void Main()
         {
-            FeedManager cw = new FeedManager();
+            FeedManager fm = new FeedManager();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeForm(cw));
+            Application.Run(new HomeForm(fm));
         }
     }
 }

@@ -21,6 +21,16 @@ namespace FeedCostAppGui
 
         }
 
+        public List<string> GetBreeds()
+        {
+            return breedTypes;
+        }
+
+        public List<string> GetFoods() 
+        {
+            return foodType;
+        }
+
         //Add a Cow to the List 
         public void AddCow(Cow newCow)
         {

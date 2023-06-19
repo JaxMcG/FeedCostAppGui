@@ -12,12 +12,30 @@ namespace FeedCostAppGui
 {
     public partial class AddCow : Form
     {
-        FeedManager cw;
+        FeedManager fm;
+        Cow cw;
 
-        public AddCow(FeedManager cw)
+        public AddCow(FeedManager fm)
         {
+            this.fm = fm;
             this.cw = cw;
             InitializeComponent();
+
+            //Populate the Combo Box with Breeds
+            foreach (var breed in fm.GetBreeds())
+            {
+                cbxBreedChoice.Items.Add(breed);
+            }
+
+            cbxBreedChoice.SelectedIndex = 0;
+
+            foreach (var food in fm.GetFoods())
+            {
+                cbxFoodChoice.Items.Add(food);
+                
+            }
+
+            cbxFoodChoice.SelectedIndex = 0;            
         }
 
         private void lblAddCowTitle_Click(object sender, EventArgs e)
@@ -28,7 +46,7 @@ namespace FeedCostAppGui
         private void btnToAddFood_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddFoodConsumptionForm myNewForm = new AddFoodConsumptionForm(cw);
+            AddFoodConsumptionForm myNewForm = new AddFoodConsumptionForm(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }
@@ -36,7 +54,7 @@ namespace FeedCostAppGui
         private void btnBackToHome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            HomeForm myNewForm = new HomeForm(cw);
+            HomeForm myNewForm = new HomeForm(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }

@@ -36,7 +36,7 @@ namespace FeedCostAppGui
             this.lblBreesSubTitle = new System.Windows.Forms.Label();
             this.lblFoodChoice = new System.Windows.Forms.Label();
             this.lblFoodPrice = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbShowFoodPrice = new System.Windows.Forms.RichTextBox();
             this.btnToAddFood = new System.Windows.Forms.Button();
             this.btnBackToHome = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -104,13 +104,13 @@ namespace FeedCostAppGui
             this.lblFoodPrice.TabIndex = 8;
             this.lblFoodPrice.Text = "Price of Food";
             // 
-            // richTextBox1
+            // rtbShowFoodPrice
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 305);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(154, 21);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.rtbShowFoodPrice.Location = new System.Drawing.Point(12, 305);
+            this.rtbShowFoodPrice.Name = "rtbShowFoodPrice";
+            this.rtbShowFoodPrice.Size = new System.Drawing.Size(154, 21);
+            this.rtbShowFoodPrice.TabIndex = 9;
+            this.rtbShowFoodPrice.Text = "";
             // 
             // btnToAddFood
             // 
@@ -139,7 +139,7 @@ namespace FeedCostAppGui
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBackToHome);
             this.Controls.Add(this.btnToAddFood);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbShowFoodPrice);
             this.Controls.Add(this.lblFoodPrice);
             this.Controls.Add(this.lblFoodChoice);
             this.Controls.Add(this.lblBreesSubTitle);
@@ -163,7 +163,7 @@ namespace FeedCostAppGui
         private System.Windows.Forms.Label lblBreesSubTitle;
         private System.Windows.Forms.Label lblFoodChoice;
         private System.Windows.Forms.Label lblFoodPrice;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbShowFoodPrice;
         private System.Windows.Forms.Button btnToAddFood;
         private System.Windows.Forms.Button btnBackToHome;
     }

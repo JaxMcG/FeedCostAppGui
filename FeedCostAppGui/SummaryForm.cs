@@ -12,11 +12,11 @@ namespace FeedCostAppGui
 {
     public partial class SummaryForm : Form
     {
-        FeedManager cw;
+        FeedManager fm;
 
-        public SummaryForm(FeedManager cw)
+        public SummaryForm(FeedManager fm)
         {
-            this.cw = cw;
+            this.fm = fm;
             InitializeComponent();
         }
 
@@ -28,7 +28,7 @@ namespace FeedCostAppGui
         private void btnToHomeScreen_Click(object sender, EventArgs e)
         {
             this.Hide();
-            HomeForm myNewForm = new HomeForm(cw);
+            HomeForm myNewForm = new HomeForm(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }

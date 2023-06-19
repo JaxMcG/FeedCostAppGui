@@ -12,18 +12,18 @@ namespace FeedCostAppGui
 {
     public partial class AddFoodConsumptionForm : Form
     {
-        FeedManager cw;
+        FeedManager fm;
 
-        public AddFoodConsumptionForm(FeedManager cw)
+        public AddFoodConsumptionForm(FeedManager fm)
         {
-            this.cw = cw;
+            this.fm = fm;
             InitializeComponent();
         }
 
         private void btnToSummary_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SummaryForm myNewForm = new SummaryForm(cw);
+            SummaryForm myNewForm = new SummaryForm(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }
@@ -31,7 +31,7 @@ namespace FeedCostAppGui
         private void btnCancelProcess_Click(object sender, EventArgs e)
         {
             this.Hide();
-            HomeForm myNewForm = new HomeForm(cw);
+            HomeForm myNewForm = new HomeForm(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }
