@@ -62,6 +62,7 @@ namespace FeedCostAppGui
             this.btnToSummary.TabIndex = 2;
             this.btnToSummary.Text = "Summary";
             this.btnToSummary.UseVisualStyleBackColor = true;
+            this.btnToSummary.Click += new System.EventHandler(this.btnToSummary_Click);
             // 
             // HomeForm
             // 

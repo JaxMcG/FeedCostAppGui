@@ -120,6 +120,7 @@ namespace FeedCostAppGui
             this.btnToAddFood.TabIndex = 10;
             this.btnToAddFood.Text = "Food Consumption";
             this.btnToAddFood.UseVisualStyleBackColor = true;
+            this.btnToAddFood.Click += new System.EventHandler(this.btnToAddFood_Click);
             // 
             // btnBackToHome
             // 
@@ -129,6 +130,7 @@ namespace FeedCostAppGui
             this.btnBackToHome.TabIndex = 11;
             this.btnBackToHome.Text = "Back to Home Screen";
             this.btnBackToHome.UseVisualStyleBackColor = true;
+            this.btnBackToHome.Click += new System.EventHandler(this.btnBackToHome_Click);
             // 
             // AddCow
             // 

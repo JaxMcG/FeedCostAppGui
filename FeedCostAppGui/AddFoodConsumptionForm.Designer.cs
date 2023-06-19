@@ -115,6 +115,7 @@ namespace FeedCostAppGui
             this.btnToSummary.TabIndex = 10;
             this.btnToSummary.Text = "Continue";
             this.btnToSummary.UseVisualStyleBackColor = true;
+            this.btnToSummary.Click += new System.EventHandler(this.btnToSummary_Click);
             // 
             // lblFoodAmount1
             // 
@@ -160,7 +161,6 @@ namespace FeedCostAppGui
             this.lblFoodAmount5.Size = new System.Drawing.Size(35, 13);
             this.lblFoodAmount5.TabIndex = 15;
             this.lblFoodAmount5.Text = "Day 5";
-            this.lblFoodAmount5.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblFoodAmount6
             // 
@@ -188,6 +188,7 @@ namespace FeedCostAppGui
             this.btnCancelProcess.TabIndex = 18;
             this.btnCancelProcess.Text = "Cancel";
             this.btnCancelProcess.UseVisualStyleBackColor = true;
+            this.btnCancelProcess.Click += new System.EventHandler(this.btnCancelProcess_Click);
             // 
             // AddFoodConsumptionForm
             // 

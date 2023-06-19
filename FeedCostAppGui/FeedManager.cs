@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FeedCostAppGui
 {
-    class FeedManager
+        public class FeedManager
     {
         private List<Cow> cows = new List<Cow>();
         private List<string> breedTypes = new List<string>() { "Friesian", "Jersey", "Ayrshire " };

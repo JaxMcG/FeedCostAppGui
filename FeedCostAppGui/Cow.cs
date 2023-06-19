@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FeedCostAppGui
 {
-    class Cow
+        public class Cow
     {
         private List<FeedManager> feedManager = new List<FeedManager>();
 

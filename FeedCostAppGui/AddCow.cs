@@ -12,14 +12,33 @@ namespace FeedCostAppGui
 {
     public partial class AddCow : Form
     {
-        public AddCow()
+        FeedManager cw;
+
+        public AddCow(FeedManager cw)
         {
+            this.cw = cw;
             InitializeComponent();
         }
 
         private void lblAddCowTitle_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnToAddFood_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddFoodConsumptionForm myNewForm = new AddFoodConsumptionForm(cw);
+            myNewForm.Closed += (s, args) => this.Close();
+            myNewForm.Show();
+        }
+
+        private void btnBackToHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeForm myNewForm = new HomeForm(cw);
+            myNewForm.Closed += (s, args) => this.Close();
+            myNewForm.Show();
         }
     }
 }

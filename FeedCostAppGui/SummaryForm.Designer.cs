@@ -60,6 +60,7 @@ namespace FeedCostAppGui
             this.btnToHomeScreen.TabIndex = 2;
             this.btnToHomeScreen.Text = "Back To Home Screen";
             this.btnToHomeScreen.UseVisualStyleBackColor = true;
+            this.btnToHomeScreen.Click += new System.EventHandler(this.btnToHomeScreen_Click);
             // 
             // SummaryForm
             // 
