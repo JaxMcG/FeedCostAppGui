@@ -36,9 +36,10 @@ namespace FeedCostAppGui
             this.lblBreesSubTitle = new System.Windows.Forms.Label();
             this.lblFoodChoice = new System.Windows.Forms.Label();
             this.lblFoodPrice = new System.Windows.Forms.Label();
-            this.rtbShowFoodPrice = new System.Windows.Forms.RichTextBox();
             this.btnToAddFood = new System.Windows.Forms.Button();
             this.btnBackToHome = new System.Windows.Forms.Button();
+            this.rtbShowPrice = new System.Windows.Forms.RichTextBox();
+            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblAddCowTitle
@@ -67,6 +68,7 @@ namespace FeedCostAppGui
             this.cbxFoodChoice.Name = "cbxFoodChoice";
             this.cbxFoodChoice.Size = new System.Drawing.Size(154, 21);
             this.cbxFoodChoice.TabIndex = 2;
+            this.cbxFoodChoice.SelectedIndexChanged += new System.EventHandler(this.cbxFoodChoice_SelectedIndexChanged);
             // 
             // lblSpeciesSubTitle
             // 
@@ -100,17 +102,9 @@ namespace FeedCostAppGui
             this.lblFoodPrice.AutoSize = true;
             this.lblFoodPrice.Location = new System.Drawing.Point(12, 289);
             this.lblFoodPrice.Name = "lblFoodPrice";
-            this.lblFoodPrice.Size = new System.Drawing.Size(70, 13);
+            this.lblFoodPrice.Size = new System.Drawing.Size(63, 13);
             this.lblFoodPrice.TabIndex = 8;
-            this.lblFoodPrice.Text = "Price of Food";
-            // 
-            // rtbShowFoodPrice
-            // 
-            this.rtbShowFoodPrice.Location = new System.Drawing.Point(12, 305);
-            this.rtbShowFoodPrice.Name = "rtbShowFoodPrice";
-            this.rtbShowFoodPrice.Size = new System.Drawing.Size(154, 21);
-            this.rtbShowFoodPrice.TabIndex = 9;
-            this.rtbShowFoodPrice.Text = "";
+            this.lblFoodPrice.Text = "Food Prices";
             // 
             // btnToAddFood
             // 
@@ -132,14 +126,30 @@ namespace FeedCostAppGui
             this.btnBackToHome.UseVisualStyleBackColor = true;
             this.btnBackToHome.Click += new System.EventHandler(this.btnBackToHome_Click);
             // 
+            // rtbShowPrice
+            // 
+            this.rtbShowPrice.Location = new System.Drawing.Point(12, 305);
+            this.rtbShowPrice.Name = "rtbShowPrice";
+            this.rtbShowPrice.Size = new System.Drawing.Size(154, 22);
+            this.rtbShowPrice.TabIndex = 12;
+            this.rtbShowPrice.Text = "";
+            // 
+            // dtpDateOfBirth
+            // 
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(281, 172);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateOfBirth.TabIndex = 13;
+            // 
             // AddCow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dtpDateOfBirth);
+            this.Controls.Add(this.rtbShowPrice);
             this.Controls.Add(this.btnBackToHome);
             this.Controls.Add(this.btnToAddFood);
-            this.Controls.Add(this.rtbShowFoodPrice);
             this.Controls.Add(this.lblFoodPrice);
             this.Controls.Add(this.lblFoodChoice);
             this.Controls.Add(this.lblBreesSubTitle);
@@ -163,8 +173,9 @@ namespace FeedCostAppGui
         private System.Windows.Forms.Label lblBreesSubTitle;
         private System.Windows.Forms.Label lblFoodChoice;
         private System.Windows.Forms.Label lblFoodPrice;
-        private System.Windows.Forms.RichTextBox rtbShowFoodPrice;
         private System.Windows.Forms.Button btnToAddFood;
         private System.Windows.Forms.Button btnBackToHome;
+        private System.Windows.Forms.RichTextBox rtbShowPrice;
+        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
     }
 }

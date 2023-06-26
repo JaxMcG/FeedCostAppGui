@@ -31,12 +31,25 @@ namespace FeedCostAppGui
             return foodType;
         }
 
+        public float GetPrice(int priceIndex)
+        {
+            return foodPrice[priceIndex];
+        }
+
         //Add a Cow to the List 
         public void AddCow(Cow newCow)
         {
             cows.Add(newCow);
 
             cows[cows.Count - 1].CreateId(cows.Count);
+        }
+
+        public void AddWeeklyConsumption(List<float> weeklyConsumption)
+        {
+            foreach (var consumption in weeklyConsumption)
+            {
+                cows[cows.Count - 1].AddFoodAmount(consumption);
+            }
         }
 
         //Calculate the Total Food Consumed By Every Cow for the Week
@@ -48,7 +61,7 @@ namespace FeedCostAppGui
             {
                 for (int index = 0; index < 3; index++)
                 {
-                    totalFoodConsumed[index] += cow.GetDailyFoodConsumed()[index];
+                    totalFoodConsumed[index] += cow.GetDailyFoodConsumed();
                 }
             }
 

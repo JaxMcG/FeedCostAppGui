@@ -30,13 +30,13 @@ namespace FeedCostAppGui
         private void InitializeComponent()
         {
             this.lblFoodConsumptionTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tbxFoodAmount1 = new System.Windows.Forms.TextBox();
+            this.tbxFoodAmount5 = new System.Windows.Forms.TextBox();
+            this.tbxFoodAmount2 = new System.Windows.Forms.TextBox();
+            this.tbxFoodAmount6 = new System.Windows.Forms.TextBox();
+            this.tbxFoodAmount7 = new System.Windows.Forms.TextBox();
+            this.tbxFoodAmount3 = new System.Windows.Forms.TextBox();
+            this.tbxFoodAmount4 = new System.Windows.Forms.TextBox();
             this.btnToSummary = new System.Windows.Forms.Button();
             this.lblFoodAmount1 = new System.Windows.Forms.Label();
             this.lblFoodAmount2 = new System.Windows.Forms.Label();
@@ -58,54 +58,56 @@ namespace FeedCostAppGui
             this.lblFoodConsumptionTitle.Text = "Food Consumption";
             this.lblFoodConsumptionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // tbxFoodAmount1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.tbxFoodAmount1.Location = new System.Drawing.Point(12, 168);
+            this.tbxFoodAmount1.Name = "tbxFoodAmount1";
+            this.tbxFoodAmount1.Size = new System.Drawing.Size(100, 20);
+            this.tbxFoodAmount1.TabIndex = 1;
+            //this.tbxFoodAmount1.TextChanged += new System.EventHandler(this.tbxFoodAmount1_TextChanged);
             // 
-            // textBox2
+            // tbxFoodAmount5
             // 
-            this.textBox2.Location = new System.Drawing.Point(224, 168);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.tbxFoodAmount5.Location = new System.Drawing.Point(224, 168);
+            this.tbxFoodAmount5.Name = "tbxFoodAmount5";
+            this.tbxFoodAmount5.Size = new System.Drawing.Size(100, 20);
+            this.tbxFoodAmount5.TabIndex = 2;
             // 
-            // textBox3
+            // tbxFoodAmount2
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 246);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 3;
+            this.tbxFoodAmount2.Location = new System.Drawing.Point(12, 246);
+            this.tbxFoodAmount2.Name = "tbxFoodAmount2";
+            this.tbxFoodAmount2.Size = new System.Drawing.Size(100, 20);
+            this.tbxFoodAmount2.TabIndex = 3;
+            //this.tbxFoodAmount2.TextChanged += new System.EventHandler(this.tbxFoodAmount2_TextChanged);
             // 
-            // textBox6
+            // tbxFoodAmount6
             // 
-            this.textBox6.Location = new System.Drawing.Point(224, 246);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 6;
+            this.tbxFoodAmount6.Location = new System.Drawing.Point(224, 246);
+            this.tbxFoodAmount6.Name = "tbxFoodAmount6";
+            this.tbxFoodAmount6.Size = new System.Drawing.Size(100, 20);
+            this.tbxFoodAmount6.TabIndex = 6;
             // 
-            // textBox7
+            // tbxFoodAmount7
             // 
-            this.textBox7.Location = new System.Drawing.Point(224, 324);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 7;
+            this.tbxFoodAmount7.Location = new System.Drawing.Point(224, 324);
+            this.tbxFoodAmount7.Name = "tbxFoodAmount7";
+            this.tbxFoodAmount7.Size = new System.Drawing.Size(100, 20);
+            this.tbxFoodAmount7.TabIndex = 7;
             // 
-            // textBox8
+            // tbxFoodAmount3
             // 
-            this.textBox8.Location = new System.Drawing.Point(12, 324);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 8;
+            this.tbxFoodAmount3.Location = new System.Drawing.Point(12, 324);
+            this.tbxFoodAmount3.Name = "tbxFoodAmount3";
+            this.tbxFoodAmount3.Size = new System.Drawing.Size(100, 20);
+            this.tbxFoodAmount3.TabIndex = 8;
             // 
-            // textBox9
+            // tbxFoodAmount4
             // 
-            this.textBox9.Location = new System.Drawing.Point(12, 402);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 9;
+            this.tbxFoodAmount4.Location = new System.Drawing.Point(12, 402);
+            this.tbxFoodAmount4.Name = "tbxFoodAmount4";
+            this.tbxFoodAmount4.Size = new System.Drawing.Size(100, 20);
+            this.tbxFoodAmount4.TabIndex = 9;
             // 
             // btnToSummary
             // 
@@ -204,13 +206,13 @@ namespace FeedCostAppGui
             this.Controls.Add(this.lblFoodAmount2);
             this.Controls.Add(this.lblFoodAmount1);
             this.Controls.Add(this.btnToSummary);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxFoodAmount4);
+            this.Controls.Add(this.tbxFoodAmount3);
+            this.Controls.Add(this.tbxFoodAmount7);
+            this.Controls.Add(this.tbxFoodAmount6);
+            this.Controls.Add(this.tbxFoodAmount2);
+            this.Controls.Add(this.tbxFoodAmount5);
+            this.Controls.Add(this.tbxFoodAmount1);
             this.Controls.Add(this.lblFoodConsumptionTitle);
             this.Name = "AddFoodConsumptionForm";
             this.Text = "AddFoodConsumptionForm";
@@ -222,13 +224,13 @@ namespace FeedCostAppGui
         #endregion
 
         private System.Windows.Forms.Label lblFoodConsumptionTitle;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbxFoodAmount1;
+        private System.Windows.Forms.TextBox tbxFoodAmount5;
+        private System.Windows.Forms.TextBox tbxFoodAmount2;
+        private System.Windows.Forms.TextBox tbxFoodAmount6;
+        private System.Windows.Forms.TextBox tbxFoodAmount7;
+        private System.Windows.Forms.TextBox tbxFoodAmount3;
+        private System.Windows.Forms.TextBox tbxFoodAmount4;
         private System.Windows.Forms.Button btnToSummary;
         private System.Windows.Forms.Label lblFoodAmount1;
         private System.Windows.Forms.Label lblFoodAmount2;

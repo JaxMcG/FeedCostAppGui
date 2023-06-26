@@ -15,7 +15,10 @@ namespace FeedCostAppGui
         FeedManager fm;
         Cow cw;
 
-        public AddCow(FeedManager fm)
+        
+        public bool flag = true;
+
+        public AddCow(FeedManager fm, Cow cw)
         {
             this.fm = fm;
             this.cw = cw;
@@ -32,10 +35,9 @@ namespace FeedCostAppGui
             foreach (var food in fm.GetFoods())
             {
                 cbxFoodChoice.Items.Add(food);
-                
             }
 
-            cbxFoodChoice.SelectedIndex = 0;            
+            cbxFoodChoice.SelectedIndex = 0;
         }
 
         private void lblAddCowTitle_Click(object sender, EventArgs e)
@@ -45,8 +47,10 @@ namespace FeedCostAppGui
 
         private void btnToAddFood_Click(object sender, EventArgs e)
         {
+            fm.AddCow(new Cow(cbxBreedChoice.Text, dtpDateOfBirth.Value, cbxFoodChoice.SelectedIndex));
+
             this.Hide();
-            AddFoodConsumptionForm myNewForm = new AddFoodConsumptionForm(fm);
+            AddFoodConsumptionForm myNewForm = new AddFoodConsumptionForm(fm, cw);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }
@@ -57,6 +61,11 @@ namespace FeedCostAppGui
             HomeForm myNewForm = new HomeForm(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
+        }
+
+        private void cbxFoodChoice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            rtbShowPrice.Text = $"{fm.GetPrice(cbxFoodChoice.SelectedIndex)}";            
         }
     }
 }
