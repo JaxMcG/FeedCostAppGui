@@ -13,19 +13,17 @@ namespace FeedCostAppGui
     public partial class HomeForm : Form
     {
         FeedManager fm;
-        Cow cw;
 
-        public HomeForm(FeedManager fm, Cow cw)
+        public HomeForm(FeedManager fm)
         {
             this.fm = fm;
-            this.cw = cw;
             InitializeComponent();
         }
 
         private void btnAddCow_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddCow myNewForm = new AddCow(fm, cw);
+            AddCow myNewForm = new AddCow(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }
@@ -36,6 +34,11 @@ namespace FeedCostAppGui
             SummaryForm myNewForm = new SummaryForm(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
+        }
+
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

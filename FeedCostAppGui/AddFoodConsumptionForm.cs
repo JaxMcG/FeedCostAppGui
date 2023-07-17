@@ -13,34 +13,29 @@ namespace FeedCostAppGui
     public partial class AddFoodConsumptionForm : Form
     {
         FeedManager fm;
-        Cow cw;
-
-        public AddFoodConsumptionForm(FeedManager fm, Cow cw)
+        
+        public AddFoodConsumptionForm(FeedManager fm)
         {
             this.fm = fm;
-            this.cw = cw;
+
             InitializeComponent();            
         }
 
-        private void btnToSummary_Click(object sender, EventArgs e)
+        private void btnToSummary_Click(object sender, EventArgs e, Cow cw, AddCow addc)
         {
-            List<float> weeklyConsumption = new List<float>() {
-                (float)Convert.ToDouble(tbxFoodAmount1.Text), 
-                (float)Convert.ToDouble(tbxFoodAmount2.Text), 
-                (float)Convert.ToDouble(tbxFoodAmount3.Text), 
-                (float)Convert.ToDouble(tbxFoodAmount4.Text), 
-                (float)Convert.ToDouble(tbxFoodAmount5.Text), 
-                (float)Convert.ToDouble(tbxFoodAmount6.Text), 
-                (float)Convert.ToDouble(tbxFoodAmount7.Text)};
+            float weeklyConsumption = (float)Convert.ToDouble(tbxFoodAmount1.Text) +
+                (float)Convert.ToDouble(tbxFoodAmount2.Text) +
+                (float)Convert.ToDouble(tbxFoodAmount3.Text) +
+                (float)Convert.ToDouble(tbxFoodAmount4.Text) +
+                (float)Convert.ToDouble(tbxFoodAmount5.Text) +
+                (float)Convert.ToDouble(tbxFoodAmount6.Text) +
+                (float)Convert.ToDouble(tbxFoodAmount7.Text);
 
-            fm.AddWeeklyConsumption(weeklyConsumption);
+            cw.AddFoodAmount(weeklyConsumption);
 
             cw.GetDailyFoodConsumed();
 
-            fm.CalculateTotalFoodConsumed();
-
-            fm.CalculateTotalFoodCost();
-
+            cw.CalculateWeeklyCost();
             
 
             this.Hide();

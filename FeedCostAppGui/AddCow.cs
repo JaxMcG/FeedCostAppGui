@@ -13,15 +13,10 @@ namespace FeedCostAppGui
     public partial class AddCow : Form
     {
         FeedManager fm;
-        Cow cw;
 
-        
-        public bool flag = true;
-
-        public AddCow(FeedManager fm, Cow cw)
+        public AddCow(FeedManager fm)
         {
             this.fm = fm;
-            this.cw = cw;
             InitializeComponent();
 
             //Populate the Combo Box with Breeds
@@ -50,7 +45,7 @@ namespace FeedCostAppGui
             fm.AddCow(new Cow(cbxBreedChoice.Text, dtpDateOfBirth.Value, cbxFoodChoice.SelectedIndex));
 
             this.Hide();
-            AddFoodConsumptionForm myNewForm = new AddFoodConsumptionForm(fm, cw);
+            AddFoodConsumptionForm myNewForm = new AddFoodConsumptionForm(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }
@@ -65,7 +60,7 @@ namespace FeedCostAppGui
 
         private void cbxFoodChoice_SelectedIndexChanged(object sender, EventArgs e)
         {
-            rtbShowPrice.Text = $"{fm.GetPrice(cbxFoodChoice.SelectedIndex)}";            
+            rtbShowPrice.Text = $"{fm.GetPrice(cbxFoodChoice.SelectedIndex)}";           
         }
     }
 }

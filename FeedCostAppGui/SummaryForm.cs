@@ -19,8 +19,6 @@ namespace FeedCostAppGui
             this.fm = fm;
             InitializeComponent();
 
-            rtbSumStatsPerCow.Text = fm.DisplayTotalSummary();
-
         }
 
         private void SummaryForm_Load(object sender, EventArgs e)

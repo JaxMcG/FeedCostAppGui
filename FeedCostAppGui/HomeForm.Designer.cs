@@ -74,6 +74,7 @@ namespace FeedCostAppGui
             this.Controls.Add(this.lblHomeTitle);
             this.Name = "HomeForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.HomeForm_Load);
             this.ResumeLayout(false);
 
         }

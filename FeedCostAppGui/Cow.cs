@@ -68,10 +68,10 @@ namespace FeedCostAppGui
         }
 
         //Calculate the Cost for the Food Eaten that Week
-        public float CalculateWeeklyCost(List<float> fPrices)
+        public float CalculateWeeklyCost(float fPrices)
         {
             //Loop Through for the Number of Food Types Calculating the Sum Cost
-            return  fPrices[foodChoice] * GetDailyFoodConsumed(); ;
+            return  fPrices * GetDailyFoodConsumed(); ;
         }
 
         public float GetFoodConsumed()
@@ -108,7 +108,7 @@ namespace FeedCostAppGui
         }
 
         //Display a Summary of the Food Eaten Plus the Cost
-        public string DisplaySingleSummary(List<float> fPrices, List<string> foodType)
+        public string DisplaySingleSummary(float fPrices, string foodType)
         {
             string summary = $"Breed: {breed}\nId: {id}\nType Of Food: {foodChoice}\n" +
                 $"Food Eaten:\n{dailyFoodAmount}\n\nTotal Food Eaten:\n";
@@ -118,9 +118,8 @@ namespace FeedCostAppGui
                 summary += $"{foodType[index]}: {GetDailyFoodConsumed()}kg\n";
             }
 
-            summary += $"Total Cost: ${CalculateWeeklyCost(fPrices)}\n" +
-                $"Recommended Amount Of Food Consumed\n" +
-                $"{CalculateRecommendedFoodConsumption()}";
+            summary += $"Total Cost: ${CalculateWeeklyCost(fPrices)}\n";
+                
 
             return summary;
         }
