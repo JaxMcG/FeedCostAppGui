@@ -72,7 +72,6 @@ namespace FeedCostAppGui
             this.Controls.Add(this.lblSummaryTitle);
             this.Name = "SummaryForm";
             this.Text = "SummaryForm";
-            this.Load += new System.EventHandler(this.SummaryForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

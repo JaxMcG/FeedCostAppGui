@@ -8,7 +8,7 @@ namespace FeedCostAppGui
 {
         public class Cow
     {
-        private List<FeedManager> feedManager = new List<FeedManager>();
+
 
         //Attributes or Fields
         private string breed;
@@ -31,9 +31,13 @@ namespace FeedCostAppGui
         }
 
         //
-        public void AddFoodAmount(float dailyFoodAmount)
+        public void AddFoodAmount(List<float> dailyFoodAmount)
         {
-            this.dailyFoodAmount.Add(dailyFoodAmount);
+            foreach (var dailyConsumption in dailyFoodAmount)
+            {
+                this.dailyFoodAmount.Add(dailyConsumption);
+            }
+            
         }
 
         //Returns the Value in the Private breed Variable

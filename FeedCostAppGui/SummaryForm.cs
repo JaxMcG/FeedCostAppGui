@@ -13,17 +13,20 @@ namespace FeedCostAppGui
     public partial class SummaryForm : Form
     {
         FeedManager fm;
+        int selectedCowIndex;
 
-        public SummaryForm(FeedManager fm)
+        public SummaryForm(FeedManager fm, int cowIndex)
         {
             this.fm = fm;
+            this.selectedCowIndex = cowIndex;
             InitializeComponent();
 
+            rtbSumStatsPerCow.Text = cw.DisplaySingleSummary(fm.GetSelectedPrice(selectedCowIndex), fm.GetFood(selectedCowIndex));
         }
 
         private void SummaryForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnToHomeScreen_Click(object sender, EventArgs e)

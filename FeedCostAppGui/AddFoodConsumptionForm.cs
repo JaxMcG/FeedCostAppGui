@@ -13,33 +13,37 @@ namespace FeedCostAppGui
     public partial class AddFoodConsumptionForm : Form
     {
         FeedManager fm;
-        
-        public AddFoodConsumptionForm(FeedManager fm)
+        int selectedCow;
+
+        public AddFoodConsumptionForm(FeedManager fm, int cowIndex)
         {
             this.fm = fm;
-
+            this.selectedCow = cowIndex;
             InitializeComponent();            
         }
 
-        private void btnToSummary_Click(object sender, EventArgs e, Cow cw, AddCow addc)
+        private void btnToSummary_Click(object sender, EventArgs e)
         {
-            float weeklyConsumption = (float)Convert.ToDouble(tbxFoodAmount1.Text) +
-                (float)Convert.ToDouble(tbxFoodAmount2.Text) +
-                (float)Convert.ToDouble(tbxFoodAmount3.Text) +
-                (float)Convert.ToDouble(tbxFoodAmount4.Text) +
-                (float)Convert.ToDouble(tbxFoodAmount5.Text) +
-                (float)Convert.ToDouble(tbxFoodAmount6.Text) +
-                (float)Convert.ToDouble(tbxFoodAmount7.Text);
 
-            cw.AddFoodAmount(weeklyConsumption);
 
-            cw.GetDailyFoodConsumed();
+            List<float> weeklyConsumption = new List<float>();
+            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount1.Text));
+            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount2.Text));
+            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount3.Text));
+            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount4.Text));
+            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount5.Text));
+            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount6.Text));
+            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount7.Text));               
 
-            cw.CalculateWeeklyCost();
+            fm.AddWeeklyConsumption(selectedCow, weeklyConsumption);
+
+            fm.GetWeeksConsumption(selectedCow);
+
+            fm.GetWeeksConsumption(selectedCow);
             
 
             this.Hide();
-            SummaryForm myNewForm = new SummaryForm(fm);
+            SummaryForm myNewForm = new SummaryForm(fm, selectedCow);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }

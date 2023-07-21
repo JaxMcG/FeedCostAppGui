@@ -36,6 +36,26 @@ namespace FeedCostAppGui
             return foodPrice[priceIndex];
         }
 
+        public Cow GetSelectedCow(int selectedCow)
+        {
+            return cows[selectedCow];
+        }
+
+        public string GetFood(int selectedCowIndex)
+        {
+            return foodType[cows[selectedCowIndex].GetFoodType()];
+        }
+
+        public int GetMostRecentCowIndex()
+        {
+            return cows.Count - 1;
+        }
+
+        public float GetSelectedPrice(int selectedCowIndex)
+        {
+            return foodPrice[cows[selectedCowIndex].GetFoodType()];
+        }
+
         //Add a Cow to the List 
         public void AddCow(Cow newCow)
         {
@@ -44,12 +64,21 @@ namespace FeedCostAppGui
             cows[cows.Count - 1].CreateId(cows.Count);
         }
 
-        public void AddWeeklyConsumption(List<float> weeklyConsumption)
+        public void AddWeeklyConsumption(int selectedCowIndex, List<float> consumption)
         {
-            foreach (var consumption in weeklyConsumption)
-            {
-                cows[cows.Count - 1].AddFoodAmount(consumption);
-            }
+            
+             cows[selectedCowIndex].AddFoodAmount(consumption);
+            
+        }
+
+        public float GetWeeksConsumption(int selectedCowIndex)
+        {
+            return cows[selectedCowIndex].GetDailyFoodConsumed();
+        }
+
+        public float GetConsumptionCost(int selectedCowIndex)
+        {
+            return cows[selectedCowIndex].CalculateWeeklyCost(GetSelectedPrice(selectedCowIndex));
         }
 
         //Calculate the Total Food Consumed By Every Cow for the Week

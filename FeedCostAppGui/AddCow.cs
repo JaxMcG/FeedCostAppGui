@@ -45,9 +45,9 @@ namespace FeedCostAppGui
             fm.AddCow(new Cow(cbxBreedChoice.Text, dtpDateOfBirth.Value, cbxFoodChoice.SelectedIndex));
 
             this.Hide();
-            AddFoodConsumptionForm myNewForm = new AddFoodConsumptionForm(fm);
+            AddFoodConsumptionForm myNewForm = new AddFoodConsumptionForm(fm, fm.GetMostRecentCowIndex());
             myNewForm.Closed += (s, args) => this.Close();
-            myNewForm.Show();
+            myNewForm.Show();          
         }
 
         private void btnBackToHome_Click(object sender, EventArgs e)

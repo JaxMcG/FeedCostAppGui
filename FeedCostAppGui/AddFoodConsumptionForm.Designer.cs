@@ -117,6 +117,7 @@ namespace FeedCostAppGui
             this.btnToSummary.TabIndex = 10;
             this.btnToSummary.Text = "Continue";
             this.btnToSummary.UseVisualStyleBackColor = true;
+            this.btnToSummary.Click += new System.EventHandler(this.btnToSummary_Click);
             // 
             // lblFoodAmount1
             // 
