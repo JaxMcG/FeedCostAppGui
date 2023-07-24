@@ -21,7 +21,7 @@ namespace FeedCostAppGui
             this.selectedCowIndex = cowIndex;
             InitializeComponent();
 
-            rtbSumStatsPerCow.Text = cw.DisplaySingleSummary(fm.GetSelectedPrice(selectedCowIndex), fm.GetFood(selectedCowIndex));
+            rtbSumStatsPerCow.Text = fm.GetSummary(selectedCowIndex);
         }
 
         private void SummaryForm_Load(object sender, EventArgs e)

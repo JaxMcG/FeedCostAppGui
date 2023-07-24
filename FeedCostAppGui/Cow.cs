@@ -8,8 +8,6 @@ namespace FeedCostAppGui
 {
         public class Cow
     {
-
-
         //Attributes or Fields
         private string breed;
         private string id;
@@ -30,7 +28,7 @@ namespace FeedCostAppGui
             this.foodChoice = foodChoice;
         }
 
-        //
+        //Add The Food Eaten Per Day To An Overall List
         public void AddFoodAmount(List<float> dailyFoodAmount)
         {
             foreach (var dailyConsumption in dailyFoodAmount)
@@ -49,7 +47,7 @@ namespace FeedCostAppGui
         //Create Id for Each Animal
         public void CreateId(int cowCount)
         {
-            id = "C" + breed.Substring(0, 3).ToUpper() + cowCount + dob;
+            id = "C" + breed.Substring(0, 1).ToUpper() + breed.Substring(1, 3).ToLower() + cowCount + dob.Year;
         }
 
         //Returns the Value in the Private foodType Variable
@@ -78,6 +76,7 @@ namespace FeedCostAppGui
             return  fPrices * GetDailyFoodConsumed(); ;
         }
 
+        //I no longer need this code as I've changed GetDailyFoodConsumed to a float, not a list
         public float GetFoodConsumed()
         {
             float weekConsumption = 0f;
@@ -114,17 +113,22 @@ namespace FeedCostAppGui
         //Display a Summary of the Food Eaten Plus the Cost
         public string DisplaySingleSummary(float fPrices, string foodType)
         {
-            string summary = $"Breed: {breed}\nId: {id}\nType Of Food: {foodChoice}\n" +
-                $"Food Eaten:\n{dailyFoodAmount}\n\nTotal Food Eaten:\n";
+            int dayCounter = 1;
 
-            for (int index = 0; index < 3; index++)
+            string summary = $"Breed: {breed}\nId: {id}\nType Of Food: {foodType}\n\n" +
+                $"Food Eaten:\n";
+
+            for (int dailyFoodIndex = dailyFoodAmount.Count - 7; dailyFoodIndex < dailyFoodAmount.Count; dailyFoodIndex++)
             {
-                summary += $"{foodType[index]}: {GetDailyFoodConsumed()}kg\n";
+                summary += $"Day {dayCounter}: {dailyFoodAmount[dailyFoodIndex]}kg\n\n";
+
+                dayCounter++;
             }
+
+            summary += $"Total Food Consumed: {GetDailyFoodConsumed()}kg\n";
 
             summary += $"Total Cost: ${CalculateWeeklyCost(fPrices)}\n";
                 
-
             return summary;
         }
 

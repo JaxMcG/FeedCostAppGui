@@ -21,36 +21,43 @@ namespace FeedCostAppGui
 
         }
 
+        //Gets The List Of Breeds
         public List<string> GetBreeds()
         {
             return breedTypes;
         }
 
+        //Gets The List Of Foods
         public List<string> GetFoods() 
         {
             return foodType;
         }
 
+        //Gets The Price Related To The Food
         public float GetPrice(int priceIndex)
         {
             return foodPrice[priceIndex];
         }
 
+        //
         public Cow GetSelectedCow(int selectedCow)
         {
             return cows[selectedCow];
         }
 
+        //Passes The Food From Cow Class Into FeedManager Class
         public string GetFood(int selectedCowIndex)
         {
             return foodType[cows[selectedCowIndex].GetFoodType()];
         }
 
+        //
         public int GetMostRecentCowIndex()
         {
             return cows.Count - 1;
         }
 
+        //Passes The Price From Cow Class Into FeedManager Class
         public float GetSelectedPrice(int selectedCowIndex)
         {
             return foodPrice[cows[selectedCowIndex].GetFoodType()];
@@ -64,6 +71,7 @@ namespace FeedCostAppGui
             cows[cows.Count - 1].CreateId(cows.Count);
         }
 
+        //
         public void AddWeeklyConsumption(int selectedCowIndex, List<float> consumption)
         {
             
@@ -71,11 +79,19 @@ namespace FeedCostAppGui
             
         }
 
+        //Passes The Food Consumed From Cow Class Into FeedManager Class
         public float GetWeeksConsumption(int selectedCowIndex)
         {
             return cows[selectedCowIndex].GetDailyFoodConsumed();
         }
 
+        //Passes The Summary From Cow Class Into FeedManager Class
+        public string GetSummary(int selectedCowIndex)
+        {
+            return cows[selectedCowIndex].DisplaySingleSummary(GetSelectedPrice(selectedCowIndex), GetFood(selectedCowIndex));
+        }
+
+        //Passes The Cost From Cow Class Into FeedManager Class
         public float GetConsumptionCost(int selectedCowIndex)
         {
             return cows[selectedCowIndex].CalculateWeeklyCost(GetSelectedPrice(selectedCowIndex));
@@ -110,8 +126,6 @@ namespace FeedCostAppGui
             return totalFoodCost;
         }
 
-
-
         //Change the Prices of Each type of Food
         public void ChangeFoodPrices()
         {
@@ -127,6 +141,7 @@ namespace FeedCostAppGui
             return totalSummary;
         }
 
+        //Adds The Summary To A List With All Summaries
         public List<string> AddSummaryToList()
         {
             AddSum.Add(DisplayTotalSummary());
