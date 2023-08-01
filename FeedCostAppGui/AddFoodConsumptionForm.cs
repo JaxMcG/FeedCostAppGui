@@ -40,6 +40,7 @@ namespace FeedCostAppGui
             fm.GetWeeksConsumption(selectedCow);
 
             fm.GetWeeksConsumption(selectedCow);
+
             
 
             this.Hide();

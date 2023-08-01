@@ -47,7 +47,12 @@ namespace FeedCostAppGui
         //Create Id for Each Animal
         public void CreateId(int cowCount)
         {
-            id = "C" + breed.Substring(0, 1).ToUpper() + breed.Substring(1, 3).ToLower() + cowCount + dob.Year;
+            id = "C" + breed.Substring(0, 1).ToUpper() + breed.Substring(1, 2).ToLower() + cowCount + "-" + dob.Year;
+        }
+
+        public string GetId()
+        {
+            return id;
         }
 
         //Returns the Value in the Private foodType Variable
@@ -73,41 +78,7 @@ namespace FeedCostAppGui
         public float CalculateWeeklyCost(float fPrices)
         {
             //Loop Through for the Number of Food Types Calculating the Sum Cost
-            return  fPrices * GetDailyFoodConsumed(); ;
-        }
-
-        //I no longer need this code as I've changed GetDailyFoodConsumed to a float, not a list
-        public float GetFoodConsumed()
-        {
-            float weekConsumption = 0f;
-
-            for (int dailyFoodIndex = dailyFoodAmount.Count - 7; dailyFoodIndex < dailyFoodAmount.Count; dailyFoodIndex++)
-            {
-                weekConsumption += dailyFoodAmount[dailyFoodIndex];
-            }
-
-            return weekConsumption;
-        }
-
-        //Calculate the Recommended Food that Should Be Consumed
-        public string CalculateRecommendedFoodConsumption()
-        {
-            string recommendation = "";
-
-            if (GetFoodConsumed() < 126)
-            {
-                recommendation = $"Cow {id} is eating {126 - GetFoodConsumed()}kg under the recommended amount of 126kg";
-            }
-            else if (GetFoodConsumed() > 200)
-            {
-                recommendation = $"Cow {id} is eating {GetFoodConsumed() - 200}kg over the recommended amount of 200kg";
-            }
-            else
-            {
-                recommendation = $"Cow {id} is eating {GetFoodConsumed()}kg which is within the recommended amount of 126kg - 200kg";
-            }
-
-            return recommendation;
+            return fPrices * GetDailyFoodConsumed();
         }
 
         //Display a Summary of the Food Eaten Plus the Cost
@@ -115,19 +86,19 @@ namespace FeedCostAppGui
         {
             int dayCounter = 1;
 
-            string summary = $"Breed: {breed}\nId: {id}\nType Of Food: {foodType}\n\n" +
+            string summary = $"Breed: {breed}\nId: {id}\nType Of Food: {foodType}\n" +
                 $"Food Eaten:\n";
 
             for (int dailyFoodIndex = dailyFoodAmount.Count - 7; dailyFoodIndex < dailyFoodAmount.Count; dailyFoodIndex++)
             {
-                summary += $"Day {dayCounter}: {dailyFoodAmount[dailyFoodIndex]}kg\n\n";
+                summary += $"Day {dayCounter}: {dailyFoodAmount[dailyFoodIndex]}kg\n";
 
                 dayCounter++;
             }
 
-            summary += $"Total Food Consumed: {GetDailyFoodConsumed()}kg\n";
+            summary += $"\nTotal Food Consumed: {GetDailyFoodConsumed()}kg\n";
 
-            summary += $"Total Cost: ${CalculateWeeklyCost(fPrices)}\n";
+            summary += $"Total Cost: ${Math.Round(CalculateWeeklyCost(fPrices), 2)}\n";
                 
             return summary;
         }

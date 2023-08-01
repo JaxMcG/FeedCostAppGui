@@ -28,12 +28,20 @@ namespace FeedCostAppGui
             myNewForm.Show();
         }
 
-        private void btnToSummary_Click(object sender, EventArgs e)
+        private void btnToTotalSummary_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //SummaryForm myNewForm = new SummaryForm(fm);
-            //myNewForm.Closed += (s, args) => this.Close();
-            //myNewForm.Show();
+            this.Hide();
+            TotalSummaryForm myNewForm = new TotalSummaryForm(fm);
+            myNewForm.Closed += (s, args) => this.Close();
+            myNewForm.Show();
+        }
+
+        private void btnSearchCow_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SearchForCowForm myNewForm = new SearchForCowForm(fm);
+            myNewForm.Closed += (s, args) => this.Close();
+            myNewForm.Show();
         }
     }
 }

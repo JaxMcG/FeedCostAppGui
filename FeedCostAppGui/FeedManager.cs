@@ -9,7 +9,7 @@ namespace FeedCostAppGui
         public class FeedManager
     {
         private List<Cow> cows = new List<Cow>();
-        private List<string> breedTypes = new List<string>() { "Friesian", "Jersey", "Ayrshire " };
+        private List<string> breedTypes = new List<string>() { "Friesian", "Jersey", "Ayrshire" };
         private List<string> foodType = new List<string>() { "Palm Kernal", "Maize", "Hay" };
         private List<float> foodPrice = new List<float>() { 1.69625f, 0.4556f, 0.113f };
         private List<float> newFoodPrice = new List<float>();
@@ -63,6 +63,21 @@ namespace FeedCostAppGui
             return foodPrice[cows[selectedCowIndex].GetFoodType()];
         }
 
+        public List<Cow> GetCows(string breed)
+        {
+            List<Cow> foundCows = new List<Cow>();
+
+            foreach (var cow in this.cows)
+            {
+                if (cow.GetBreed().Equals(breed))
+                {
+                    foundCows.Add(cow);
+                }
+            }
+
+            return foundCows;
+        }
+
         //Add a Cow to the List 
         public void AddCow(Cow newCow)
         {
@@ -73,10 +88,8 @@ namespace FeedCostAppGui
 
         //
         public void AddWeeklyConsumption(int selectedCowIndex, List<float> consumption)
-        {
-            
-             cows[selectedCowIndex].AddFoodAmount(consumption);
-            
+        {         
+             cows[selectedCowIndex].AddFoodAmount(consumption);         
         }
 
         //Passes The Food Consumed From Cow Class Into FeedManager Class
@@ -85,45 +98,75 @@ namespace FeedCostAppGui
             return cows[selectedCowIndex].GetDailyFoodConsumed();
         }
 
-        //Passes The Summary From Cow Class Into FeedManager Class
-        public string GetSummary(int selectedCowIndex)
-        {
-            return cows[selectedCowIndex].DisplaySingleSummary(GetSelectedPrice(selectedCowIndex), GetFood(selectedCowIndex));
-        }
-
         //Passes The Cost From Cow Class Into FeedManager Class
         public float GetConsumptionCost(int selectedCowIndex)
         {
             return cows[selectedCowIndex].CalculateWeeklyCost(GetSelectedPrice(selectedCowIndex));
         }
 
+        //Passes The Summary From Cow Class Into FeedManager Class
+        public string GetSummary(int selectedCowIndex)
+        {
+            return cows[selectedCowIndex].DisplaySingleSummary(GetSelectedPrice(selectedCowIndex), GetFood(selectedCowIndex));
+        }
+
+        //
+        public List<string> AddSingleSumToList(int selectedCowIndex)
+        {
+            List<string> AllSingleSummaries = new List<string>();
+
+            AllSingleSummaries.Add(cows[selectedCowIndex].DisplaySingleSummary(GetSelectedPrice(selectedCowIndex), GetFood(selectedCowIndex)));
+
+            return AllSingleSummaries;
+        }
+
+        //Return The Index
+        public int GetIdIndex(string selectedId)
+        {
+            int idIndex = 0;
+
+            foreach (var cow in cows)
+            {
+                if (cow.GetId().Equals(selectedId))
+                {
+                    return idIndex;
+                }
+
+                idIndex++;
+            }
+
+            return -1;
+        }
+
+        public string GetCowSummary(string id)
+        {
+            return cows[GetIdIndex(id)].DisplaySingleSummary(GetSelectedPrice(GetIdIndex(id)), GetFood(GetIdIndex(id)));
+        }
+
         //Calculate the Total Food Consumed By Every Cow for the Week
         public List<float> CalculateTotalFoodConsumed()
         {
-            List<float> totalFoodConsumed = new List<float>() { 0, 0, 0 };
+            List<float> totalFoodConsumed = new List<float>() {0, 0, 0 };
 
             foreach (Cow cow in cows)
-            {
-                for (int index = 0; index < 3; index++)
-                {
-                    totalFoodConsumed[index] += cow.GetDailyFoodConsumed();
-                }
+            {                               
+                    totalFoodConsumed[cow.GetFoodType()] += cow.GetDailyFoodConsumed();               
             }
 
             return totalFoodConsumed;
         }
 
         //Calculate the Total Cost of Food for CalculateTotalFoodConsumed()
-        public List<float> CalculateTotalFoodCost(float foodPrices = 0)
+        public float CalculateTotalFoodCost()
         {
-            List<float> totalFoodCost = new List<float>() { 0, 0, 0 };
+            float totalFoodCost = 0;
 
             for (int index = 0; index < 3; index++)
             {
-                totalFoodCost[index] = foodPrices * CalculateTotalFoodConsumed()[index];
+                totalFoodCost += foodPrice[index] * CalculateTotalFoodConsumed()[index];
             }
 
-            return totalFoodCost;
+            return (float)Math.Round(totalFoodCost, 2);
         }
 
         //Change the Prices of Each type of Food
@@ -136,8 +179,15 @@ namespace FeedCostAppGui
         public string DisplayTotalSummary()
         {
             string totalSummary = $"Total Summary\n" +
-                $"Total Food Consumed: {CalculateTotalFoodConsumed()}\n" +
-                $"Total Cost: ${CalculateTotalFoodCost()}\n\n";
+                $"Total Food Consumed: \n";
+
+            for (int i = 0; i < foodType.Count; i++)
+            {
+                totalSummary += $"{foodType[i]}: {CalculateTotalFoodConsumed()[i]}kg\n";
+            }
+
+                totalSummary += $"Total Cost: ${CalculateTotalFoodCost()}\n\n";
+
             return totalSummary;
         }
 

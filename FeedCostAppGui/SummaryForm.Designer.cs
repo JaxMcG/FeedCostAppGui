@@ -32,13 +32,14 @@ namespace FeedCostAppGui
             this.lblSummaryTitle = new System.Windows.Forms.Label();
             this.rtbSumStatsPerCow = new System.Windows.Forms.RichTextBox();
             this.btnToHomeScreen = new System.Windows.Forms.Button();
+            this.btnToTotalSumFromSingleSum = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSummaryTitle
             // 
             this.lblSummaryTitle.AutoSize = true;
             this.lblSummaryTitle.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSummaryTitle.Location = new System.Drawing.Point(288, 12);
+            this.lblSummaryTitle.Location = new System.Drawing.Point(398, 41);
             this.lblSummaryTitle.Name = "lblSummaryTitle";
             this.lblSummaryTitle.Size = new System.Drawing.Size(283, 34);
             this.lblSummaryTitle.TabIndex = 0;
@@ -62,11 +63,22 @@ namespace FeedCostAppGui
             this.btnToHomeScreen.UseVisualStyleBackColor = true;
             this.btnToHomeScreen.Click += new System.EventHandler(this.btnToHomeScreen_Click);
             // 
+            // btnToTotalSumFromSingleSum
+            // 
+            this.btnToTotalSumFromSingleSum.Location = new System.Drawing.Point(606, 333);
+            this.btnToTotalSumFromSingleSum.Name = "btnToTotalSumFromSingleSum";
+            this.btnToTotalSumFromSingleSum.Size = new System.Drawing.Size(182, 49);
+            this.btnToTotalSumFromSingleSum.TabIndex = 3;
+            this.btnToTotalSumFromSingleSum.Text = "To Total Summary";
+            this.btnToTotalSumFromSingleSum.UseVisualStyleBackColor = true;
+            this.btnToTotalSumFromSingleSum.Click += new System.EventHandler(this.btnToTotalSumFromSingleSum_Click);
+            // 
             // SummaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnToTotalSumFromSingleSum);
             this.Controls.Add(this.btnToHomeScreen);
             this.Controls.Add(this.rtbSumStatsPerCow);
             this.Controls.Add(this.lblSummaryTitle);
@@ -82,5 +94,6 @@ namespace FeedCostAppGui
         private System.Windows.Forms.Label lblSummaryTitle;
         private System.Windows.Forms.RichTextBox rtbSumStatsPerCow;
         private System.Windows.Forms.Button btnToHomeScreen;
+        private System.Windows.Forms.Button btnToTotalSumFromSingleSum;
     }
 }

@@ -14,7 +14,7 @@ namespace FeedCostAppGui
     {
         FeedManager fm;
 
-        public AddCow(FeedManager fm)
+        public AddCow(FeedManager fm )
         {
             this.fm = fm;
             InitializeComponent();

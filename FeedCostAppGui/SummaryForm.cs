@@ -13,15 +13,15 @@ namespace FeedCostAppGui
     public partial class SummaryForm : Form
     {
         FeedManager fm;
-        int selectedCowIndex;
+        int selectedCow;
 
         public SummaryForm(FeedManager fm, int cowIndex)
         {
             this.fm = fm;
-            this.selectedCowIndex = cowIndex;
+            this.selectedCow = cowIndex;
             InitializeComponent();
 
-            rtbSumStatsPerCow.Text = fm.GetSummary(selectedCowIndex);
+            rtbSumStatsPerCow.Text = fm.GetSummary(selectedCow);
         }
 
         private void SummaryForm_Load(object sender, EventArgs e)
@@ -33,6 +33,14 @@ namespace FeedCostAppGui
         {
             this.Hide();
             HomeForm myNewForm = new HomeForm(fm);
+            myNewForm.Closed += (s, args) => this.Close();
+            myNewForm.Show();
+        }
+
+        private void btnToTotalSumFromSingleSum_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TotalSummaryForm myNewForm = new TotalSummaryForm(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }

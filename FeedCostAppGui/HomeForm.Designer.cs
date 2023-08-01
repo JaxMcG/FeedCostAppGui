@@ -31,7 +31,8 @@ namespace FeedCostAppGui
         {
             this.lblHomeTitle = new System.Windows.Forms.Label();
             this.btnAddCow = new System.Windows.Forms.Button();
-            this.btnToSummary = new System.Windows.Forms.Button();
+            this.btnToTotalSummary = new System.Windows.Forms.Button();
+            this.btnSearchCow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHomeTitle
@@ -46,7 +47,7 @@ namespace FeedCostAppGui
             // 
             // btnAddCow
             // 
-            this.btnAddCow.Location = new System.Drawing.Point(315, 169);
+            this.btnAddCow.Location = new System.Drawing.Point(315, 99);
             this.btnAddCow.Name = "btnAddCow";
             this.btnAddCow.Size = new System.Drawing.Size(164, 49);
             this.btnAddCow.TabIndex = 1;
@@ -54,22 +55,33 @@ namespace FeedCostAppGui
             this.btnAddCow.UseVisualStyleBackColor = true;
             this.btnAddCow.Click += new System.EventHandler(this.btnAddCow_Click);
             // 
-            // btnToSummary
+            // btnToTotalSummary
             // 
-            this.btnToSummary.Location = new System.Drawing.Point(315, 224);
-            this.btnToSummary.Name = "btnToSummary";
-            this.btnToSummary.Size = new System.Drawing.Size(164, 49);
-            this.btnToSummary.TabIndex = 2;
-            this.btnToSummary.Text = "Summary";
-            this.btnToSummary.UseVisualStyleBackColor = true;
-            this.btnToSummary.Click += new System.EventHandler(this.btnToSummary_Click);
+            this.btnToTotalSummary.Location = new System.Drawing.Point(315, 154);
+            this.btnToTotalSummary.Name = "btnToTotalSummary";
+            this.btnToTotalSummary.Size = new System.Drawing.Size(164, 49);
+            this.btnToTotalSummary.TabIndex = 3;
+            this.btnToTotalSummary.Text = "Total Summary";
+            this.btnToTotalSummary.UseVisualStyleBackColor = true;
+            this.btnToTotalSummary.Click += new System.EventHandler(this.btnToTotalSummary_Click);
+            // 
+            // btnSearchCow
+            // 
+            this.btnSearchCow.Location = new System.Drawing.Point(315, 209);
+            this.btnSearchCow.Name = "btnSearchCow";
+            this.btnSearchCow.Size = new System.Drawing.Size(164, 49);
+            this.btnSearchCow.TabIndex = 5;
+            this.btnSearchCow.Text = "Search For A Cow";
+            this.btnSearchCow.UseVisualStyleBackColor = true;
+            this.btnSearchCow.Click += new System.EventHandler(this.btnSearchCow_Click);
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnToSummary);
+            this.Controls.Add(this.btnSearchCow);
+            this.Controls.Add(this.btnToTotalSummary);
             this.Controls.Add(this.btnAddCow);
             this.Controls.Add(this.lblHomeTitle);
             this.Name = "HomeForm";
@@ -82,7 +94,8 @@ namespace FeedCostAppGui
 
         private System.Windows.Forms.Label lblHomeTitle;
         private System.Windows.Forms.Button btnAddCow;
-        private System.Windows.Forms.Button btnToSummary;
+        private System.Windows.Forms.Button btnToTotalSummary;
+        private System.Windows.Forms.Button btnSearchCow;
     }
 }
 

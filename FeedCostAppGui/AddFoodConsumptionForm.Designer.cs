@@ -64,7 +64,6 @@ namespace FeedCostAppGui
             this.tbxFoodAmount1.Name = "tbxFoodAmount1";
             this.tbxFoodAmount1.Size = new System.Drawing.Size(100, 20);
             this.tbxFoodAmount1.TabIndex = 1;
-            //this.tbxFoodAmount1.TextChanged += new System.EventHandler(this.tbxFoodAmount1_TextChanged);
             // 
             // tbxFoodAmount5
             // 
@@ -79,7 +78,6 @@ namespace FeedCostAppGui
             this.tbxFoodAmount2.Name = "tbxFoodAmount2";
             this.tbxFoodAmount2.Size = new System.Drawing.Size(100, 20);
             this.tbxFoodAmount2.TabIndex = 3;
-            //this.tbxFoodAmount2.TextChanged += new System.EventHandler(this.tbxFoodAmount2_TextChanged);
             // 
             // tbxFoodAmount6
             // 
@@ -124,63 +122,63 @@ namespace FeedCostAppGui
             this.lblFoodAmount1.AutoSize = true;
             this.lblFoodAmount1.Location = new System.Drawing.Point(12, 152);
             this.lblFoodAmount1.Name = "lblFoodAmount1";
-            this.lblFoodAmount1.Size = new System.Drawing.Size(35, 13);
+            this.lblFoodAmount1.Size = new System.Drawing.Size(56, 13);
             this.lblFoodAmount1.TabIndex = 11;
-            this.lblFoodAmount1.Text = "Day 1";
+            this.lblFoodAmount1.Text = "Day 1 - kg";
             // 
             // lblFoodAmount2
             // 
             this.lblFoodAmount2.AutoSize = true;
             this.lblFoodAmount2.Location = new System.Drawing.Point(12, 230);
             this.lblFoodAmount2.Name = "lblFoodAmount2";
-            this.lblFoodAmount2.Size = new System.Drawing.Size(35, 13);
+            this.lblFoodAmount2.Size = new System.Drawing.Size(56, 13);
             this.lblFoodAmount2.TabIndex = 12;
-            this.lblFoodAmount2.Text = "Day 2";
+            this.lblFoodAmount2.Text = "Day 2 - kg";
             // 
             // lblFoodAmount3
             // 
             this.lblFoodAmount3.AutoSize = true;
             this.lblFoodAmount3.Location = new System.Drawing.Point(12, 308);
             this.lblFoodAmount3.Name = "lblFoodAmount3";
-            this.lblFoodAmount3.Size = new System.Drawing.Size(35, 13);
+            this.lblFoodAmount3.Size = new System.Drawing.Size(56, 13);
             this.lblFoodAmount3.TabIndex = 13;
-            this.lblFoodAmount3.Text = "Day 3";
+            this.lblFoodAmount3.Text = "Day 3 - kg";
             // 
             // lblFoodAmount4
             // 
             this.lblFoodAmount4.AutoSize = true;
             this.lblFoodAmount4.Location = new System.Drawing.Point(12, 386);
             this.lblFoodAmount4.Name = "lblFoodAmount4";
-            this.lblFoodAmount4.Size = new System.Drawing.Size(35, 13);
+            this.lblFoodAmount4.Size = new System.Drawing.Size(56, 13);
             this.lblFoodAmount4.TabIndex = 14;
-            this.lblFoodAmount4.Text = "Day 4";
+            this.lblFoodAmount4.Text = "Day 4 - kg";
             // 
             // lblFoodAmount5
             // 
             this.lblFoodAmount5.AutoSize = true;
             this.lblFoodAmount5.Location = new System.Drawing.Point(221, 152);
             this.lblFoodAmount5.Name = "lblFoodAmount5";
-            this.lblFoodAmount5.Size = new System.Drawing.Size(35, 13);
+            this.lblFoodAmount5.Size = new System.Drawing.Size(56, 13);
             this.lblFoodAmount5.TabIndex = 15;
-            this.lblFoodAmount5.Text = "Day 5";
+            this.lblFoodAmount5.Text = "Day 5 - kg";
             // 
             // lblFoodAmount6
             // 
             this.lblFoodAmount6.AutoSize = true;
             this.lblFoodAmount6.Location = new System.Drawing.Point(221, 230);
             this.lblFoodAmount6.Name = "lblFoodAmount6";
-            this.lblFoodAmount6.Size = new System.Drawing.Size(35, 13);
+            this.lblFoodAmount6.Size = new System.Drawing.Size(56, 13);
             this.lblFoodAmount6.TabIndex = 16;
-            this.lblFoodAmount6.Text = "Day 6";
+            this.lblFoodAmount6.Text = "Day 6 - kg";
             // 
             // lblFoodAmount7
             // 
             this.lblFoodAmount7.AutoSize = true;
             this.lblFoodAmount7.Location = new System.Drawing.Point(221, 308);
             this.lblFoodAmount7.Name = "lblFoodAmount7";
-            this.lblFoodAmount7.Size = new System.Drawing.Size(35, 13);
+            this.lblFoodAmount7.Size = new System.Drawing.Size(56, 13);
             this.lblFoodAmount7.TabIndex = 17;
-            this.lblFoodAmount7.Text = "Day 7";
+            this.lblFoodAmount7.Text = "Day 7 - kg";
             // 
             // btnCancelProcess
             // 
