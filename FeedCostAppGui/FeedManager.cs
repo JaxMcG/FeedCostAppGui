@@ -110,6 +110,11 @@ namespace FeedCostAppGui
             return cows[selectedCowIndex].DisplaySingleSummary(GetSelectedPrice(selectedCowIndex), GetFood(selectedCowIndex));
         }
 
+        public string GetReconmendedFoodConsumed(int selectedCowIndex)
+        {
+            return cows[selectedCowIndex].ReconmendedFoodConsumed();
+        }
+
         //
         public List<string> AddSingleSumToList(int selectedCowIndex)
         {

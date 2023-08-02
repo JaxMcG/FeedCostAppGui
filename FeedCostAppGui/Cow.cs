@@ -81,6 +81,26 @@ namespace FeedCostAppGui
             return fPrices * GetDailyFoodConsumed();
         }
 
+        public string ReconmendedFoodConsumed()
+        {
+            string checkFoodConsumed;
+
+            if (GetDailyFoodConsumed() < 105)
+            {
+                checkFoodConsumed = $"{GetId()} is eating {Math.Round(105 - GetDailyFoodConsumed(), 2)}kg under the reconmended food amount of 105kg - 140kg";
+            }
+            else if (GetDailyFoodConsumed() > 140)
+            {
+                checkFoodConsumed = $"{GetId()} is eating {Math.Round(GetDailyFoodConsumed() - 140, 2)}kg over the reconmended food amount of 105kg - 140kg";
+            }
+            else
+            {
+                checkFoodConsumed = $"{GetId()} is eating withing the reconmended food amount of 105kg - 140kg";
+            }
+
+            return checkFoodConsumed;
+        }
+
         //Display a Summary of the Food Eaten Plus the Cost
         public string DisplaySingleSummary(float fPrices, string foodType)
         {
