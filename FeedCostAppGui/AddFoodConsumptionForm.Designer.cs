@@ -30,13 +30,6 @@ namespace FeedCostAppGui
         private void InitializeComponent()
         {
             this.lblFoodConsumptionTitle = new System.Windows.Forms.Label();
-            this.tbxFoodAmount1 = new System.Windows.Forms.TextBox();
-            this.tbxFoodAmount5 = new System.Windows.Forms.TextBox();
-            this.tbxFoodAmount2 = new System.Windows.Forms.TextBox();
-            this.tbxFoodAmount6 = new System.Windows.Forms.TextBox();
-            this.tbxFoodAmount7 = new System.Windows.Forms.TextBox();
-            this.tbxFoodAmount3 = new System.Windows.Forms.TextBox();
-            this.tbxFoodAmount4 = new System.Windows.Forms.TextBox();
             this.btnToSummary = new System.Windows.Forms.Button();
             this.lblFoodAmount1 = new System.Windows.Forms.Label();
             this.lblFoodAmount2 = new System.Windows.Forms.Label();
@@ -46,6 +39,20 @@ namespace FeedCostAppGui
             this.lblFoodAmount6 = new System.Windows.Forms.Label();
             this.lblFoodAmount7 = new System.Windows.Forms.Label();
             this.btnCancelProcess = new System.Windows.Forms.Button();
+            this.nudFoodConsumed1 = new System.Windows.Forms.NumericUpDown();
+            this.nudFoodConsumed2 = new System.Windows.Forms.NumericUpDown();
+            this.nudFoodConsumed3 = new System.Windows.Forms.NumericUpDown();
+            this.nudFoodConsumed4 = new System.Windows.Forms.NumericUpDown();
+            this.nudFoodConsumed5 = new System.Windows.Forms.NumericUpDown();
+            this.nudFoodConsumed6 = new System.Windows.Forms.NumericUpDown();
+            this.nudFoodConsumed7 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed7)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFoodConsumptionTitle
@@ -57,55 +64,6 @@ namespace FeedCostAppGui
             this.lblFoodConsumptionTitle.TabIndex = 0;
             this.lblFoodConsumptionTitle.Text = "Food Consumption";
             this.lblFoodConsumptionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tbxFoodAmount1
-            // 
-            this.tbxFoodAmount1.Location = new System.Drawing.Point(12, 168);
-            this.tbxFoodAmount1.Name = "tbxFoodAmount1";
-            this.tbxFoodAmount1.Size = new System.Drawing.Size(100, 20);
-            this.tbxFoodAmount1.TabIndex = 1;
-            // 
-            // tbxFoodAmount5
-            // 
-            this.tbxFoodAmount5.Location = new System.Drawing.Point(224, 168);
-            this.tbxFoodAmount5.Name = "tbxFoodAmount5";
-            this.tbxFoodAmount5.Size = new System.Drawing.Size(100, 20);
-            this.tbxFoodAmount5.TabIndex = 2;
-            // 
-            // tbxFoodAmount2
-            // 
-            this.tbxFoodAmount2.Location = new System.Drawing.Point(12, 246);
-            this.tbxFoodAmount2.Name = "tbxFoodAmount2";
-            this.tbxFoodAmount2.Size = new System.Drawing.Size(100, 20);
-            this.tbxFoodAmount2.TabIndex = 3;
-            // 
-            // tbxFoodAmount6
-            // 
-            this.tbxFoodAmount6.Location = new System.Drawing.Point(224, 246);
-            this.tbxFoodAmount6.Name = "tbxFoodAmount6";
-            this.tbxFoodAmount6.Size = new System.Drawing.Size(100, 20);
-            this.tbxFoodAmount6.TabIndex = 6;
-            // 
-            // tbxFoodAmount7
-            // 
-            this.tbxFoodAmount7.Location = new System.Drawing.Point(224, 324);
-            this.tbxFoodAmount7.Name = "tbxFoodAmount7";
-            this.tbxFoodAmount7.Size = new System.Drawing.Size(100, 20);
-            this.tbxFoodAmount7.TabIndex = 7;
-            // 
-            // tbxFoodAmount3
-            // 
-            this.tbxFoodAmount3.Location = new System.Drawing.Point(12, 324);
-            this.tbxFoodAmount3.Name = "tbxFoodAmount3";
-            this.tbxFoodAmount3.Size = new System.Drawing.Size(100, 20);
-            this.tbxFoodAmount3.TabIndex = 8;
-            // 
-            // tbxFoodAmount4
-            // 
-            this.tbxFoodAmount4.Location = new System.Drawing.Point(12, 402);
-            this.tbxFoodAmount4.Name = "tbxFoodAmount4";
-            this.tbxFoodAmount4.Size = new System.Drawing.Size(100, 20);
-            this.tbxFoodAmount4.TabIndex = 9;
             // 
             // btnToSummary
             // 
@@ -190,11 +148,74 @@ namespace FeedCostAppGui
             this.btnCancelProcess.UseVisualStyleBackColor = true;
             this.btnCancelProcess.Click += new System.EventHandler(this.btnCancelProcess_Click);
             // 
+            // nudFoodConsumed1
+            // 
+            this.nudFoodConsumed1.DecimalPlaces = 2;
+            this.nudFoodConsumed1.Location = new System.Drawing.Point(12, 168);
+            this.nudFoodConsumed1.Name = "nudFoodConsumed1";
+            this.nudFoodConsumed1.Size = new System.Drawing.Size(120, 20);
+            this.nudFoodConsumed1.TabIndex = 19;
+            // 
+            // nudFoodConsumed2
+            // 
+            this.nudFoodConsumed2.DecimalPlaces = 2;
+            this.nudFoodConsumed2.Location = new System.Drawing.Point(12, 246);
+            this.nudFoodConsumed2.Name = "nudFoodConsumed2";
+            this.nudFoodConsumed2.Size = new System.Drawing.Size(120, 20);
+            this.nudFoodConsumed2.TabIndex = 20;
+            // 
+            // nudFoodConsumed3
+            // 
+            this.nudFoodConsumed3.DecimalPlaces = 2;
+            this.nudFoodConsumed3.Location = new System.Drawing.Point(12, 324);
+            this.nudFoodConsumed3.Name = "nudFoodConsumed3";
+            this.nudFoodConsumed3.Size = new System.Drawing.Size(120, 20);
+            this.nudFoodConsumed3.TabIndex = 21;
+            // 
+            // nudFoodConsumed4
+            // 
+            this.nudFoodConsumed4.DecimalPlaces = 2;
+            this.nudFoodConsumed4.Location = new System.Drawing.Point(12, 402);
+            this.nudFoodConsumed4.Name = "nudFoodConsumed4";
+            this.nudFoodConsumed4.Size = new System.Drawing.Size(120, 20);
+            this.nudFoodConsumed4.TabIndex = 22;
+            // 
+            // nudFoodConsumed5
+            // 
+            this.nudFoodConsumed5.DecimalPlaces = 2;
+            this.nudFoodConsumed5.Location = new System.Drawing.Point(224, 168);
+            this.nudFoodConsumed5.Name = "nudFoodConsumed5";
+            this.nudFoodConsumed5.Size = new System.Drawing.Size(120, 20);
+            this.nudFoodConsumed5.TabIndex = 23;
+            // 
+            // nudFoodConsumed6
+            // 
+            this.nudFoodConsumed6.DecimalPlaces = 2;
+            this.nudFoodConsumed6.Location = new System.Drawing.Point(224, 246);
+            this.nudFoodConsumed6.Name = "nudFoodConsumed6";
+            this.nudFoodConsumed6.Size = new System.Drawing.Size(120, 20);
+            this.nudFoodConsumed6.TabIndex = 24;
+            // 
+            // nudFoodConsumed7
+            // 
+            this.nudFoodConsumed7.DecimalPlaces = 2;
+            this.nudFoodConsumed7.Location = new System.Drawing.Point(224, 324);
+            this.nudFoodConsumed7.Name = "nudFoodConsumed7";
+            this.nudFoodConsumed7.Size = new System.Drawing.Size(120, 20);
+            this.nudFoodConsumed7.TabIndex = 25;
+            // 
             // AddFoodConsumptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nudFoodConsumed7);
+            this.Controls.Add(this.nudFoodConsumed6);
+            this.Controls.Add(this.nudFoodConsumed5);
+            this.Controls.Add(this.nudFoodConsumed4);
+            this.Controls.Add(this.nudFoodConsumed3);
+            this.Controls.Add(this.nudFoodConsumed2);
+            this.Controls.Add(this.nudFoodConsumed1);
             this.Controls.Add(this.btnCancelProcess);
             this.Controls.Add(this.lblFoodAmount7);
             this.Controls.Add(this.lblFoodAmount6);
@@ -204,16 +225,16 @@ namespace FeedCostAppGui
             this.Controls.Add(this.lblFoodAmount2);
             this.Controls.Add(this.lblFoodAmount1);
             this.Controls.Add(this.btnToSummary);
-            this.Controls.Add(this.tbxFoodAmount4);
-            this.Controls.Add(this.tbxFoodAmount3);
-            this.Controls.Add(this.tbxFoodAmount7);
-            this.Controls.Add(this.tbxFoodAmount6);
-            this.Controls.Add(this.tbxFoodAmount2);
-            this.Controls.Add(this.tbxFoodAmount5);
-            this.Controls.Add(this.tbxFoodAmount1);
             this.Controls.Add(this.lblFoodConsumptionTitle);
             this.Name = "AddFoodConsumptionForm";
             this.Text = "AddFoodConsumptionForm";
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,13 +243,6 @@ namespace FeedCostAppGui
         #endregion
 
         private System.Windows.Forms.Label lblFoodConsumptionTitle;
-        private System.Windows.Forms.TextBox tbxFoodAmount1;
-        private System.Windows.Forms.TextBox tbxFoodAmount5;
-        private System.Windows.Forms.TextBox tbxFoodAmount2;
-        private System.Windows.Forms.TextBox tbxFoodAmount6;
-        private System.Windows.Forms.TextBox tbxFoodAmount7;
-        private System.Windows.Forms.TextBox tbxFoodAmount3;
-        private System.Windows.Forms.TextBox tbxFoodAmount4;
         private System.Windows.Forms.Button btnToSummary;
         private System.Windows.Forms.Label lblFoodAmount1;
         private System.Windows.Forms.Label lblFoodAmount2;
@@ -238,5 +252,12 @@ namespace FeedCostAppGui
         private System.Windows.Forms.Label lblFoodAmount6;
         private System.Windows.Forms.Label lblFoodAmount7;
         private System.Windows.Forms.Button btnCancelProcess;
+        private System.Windows.Forms.NumericUpDown nudFoodConsumed1;
+        private System.Windows.Forms.NumericUpDown nudFoodConsumed2;
+        private System.Windows.Forms.NumericUpDown nudFoodConsumed3;
+        private System.Windows.Forms.NumericUpDown nudFoodConsumed4;
+        private System.Windows.Forms.NumericUpDown nudFoodConsumed5;
+        private System.Windows.Forms.NumericUpDown nudFoodConsumed6;
+        private System.Windows.Forms.NumericUpDown nudFoodConsumed7;
     }
 }

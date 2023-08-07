@@ -60,6 +60,7 @@ namespace FeedCostAppGui
             this.cbxBreedChoice.Name = "cbxBreedChoice";
             this.cbxBreedChoice.Size = new System.Drawing.Size(154, 21);
             this.cbxBreedChoice.TabIndex = 1;
+            this.cbxBreedChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             // 
             // cbxFoodChoice
             // 
@@ -69,6 +70,7 @@ namespace FeedCostAppGui
             this.cbxFoodChoice.Size = new System.Drawing.Size(154, 21);
             this.cbxFoodChoice.TabIndex = 2;
             this.cbxFoodChoice.SelectedIndexChanged += new System.EventHandler(this.cbxFoodChoice_SelectedIndexChanged);
+            this.cbxFoodChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             // 
             // lblSpeciesSubTitle
             // 
@@ -133,6 +135,7 @@ namespace FeedCostAppGui
             this.rtbShowPrice.Size = new System.Drawing.Size(154, 22);
             this.rtbShowPrice.TabIndex = 12;
             this.rtbShowPrice.Text = "";
+            this.rtbShowPrice.ReadOnly = true;
             // 
             // dtpDateOfBirth
             // 

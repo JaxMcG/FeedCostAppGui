@@ -25,28 +25,21 @@ namespace FeedCostAppGui
         private void btnToSummary_Click(object sender, EventArgs e)
         {
 
-
+            //Add all the daily consumptions into one list
             List<float> weeklyConsumption = new List<float>();
-            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount1.Text));
-            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount2.Text));
-            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount3.Text));
-            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount4.Text));
-            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount5.Text));
-            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount6.Text));
-            weeklyConsumption.Add((float)Convert.ToDouble(tbxFoodAmount7.Text));               
+            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed1));
+            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed2));
+            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed3));
+            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed4));
+            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed5));
+            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed6));
+            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed7));
 
             fm.AddWeeklyConsumption(selectedCow, weeklyConsumption);
 
             fm.GetWeeksConsumption(selectedCow);
 
-            fm.GetWeeksConsumption(selectedCow);
-
-            
-
-            this.Hide();
-            SummaryForm myNewForm = new SummaryForm(fm, selectedCow);
-            myNewForm.Closed += (s, args) => this.Close();
-            myNewForm.Show();
+            fm.GetConsumptionCost(selectedCow);
         }
 
         private void btnCancelProcess_Click(object sender, EventArgs e)

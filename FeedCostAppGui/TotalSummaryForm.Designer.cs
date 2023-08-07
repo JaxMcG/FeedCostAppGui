@@ -41,6 +41,7 @@ namespace FeedCostAppGui
             this.rtbSumStatsAllCow.Size = new System.Drawing.Size(270, 426);
             this.rtbSumStatsAllCow.TabIndex = 2;
             this.rtbSumStatsAllCow.Text = "";
+            this.rtbSumStatsAllCow.ReadOnly = true;
             // 
             // lblTotalSummaryTitle
             // 

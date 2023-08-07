@@ -21,6 +21,7 @@ namespace FeedCostAppGui
             this.selectedCow = cowIndex;
             InitializeComponent();
 
+            //Display the summary for that cow
             rtbSumStatsPerCow.Text = fm.GetSummary(selectedCow);
             rtbSumStatsPerCow.Text += fm.GetReconmendedFoodConsumed(selectedCow);
         }

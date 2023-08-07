@@ -30,6 +30,7 @@ namespace FeedCostAppGui
             
         }
 
+        //Displaying all Friesian's only in the combo box/search bar
         private void rdbFilterFriesian_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbFilterFriesian.Checked)
@@ -39,6 +40,7 @@ namespace FeedCostAppGui
             }    
         }
 
+        //Displaying all Jersey's only in the combo box/search bar
         private void rdbFilterJersey_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbFilterJersey.Checked)
@@ -48,6 +50,7 @@ namespace FeedCostAppGui
             }
         }
 
+        //Displaying all Ayrshire's only in the combo box/search bar
         private void rdbFilterAyrshire_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbFilterAyrshire.Checked)
@@ -65,6 +68,7 @@ namespace FeedCostAppGui
             myNewForm.Show();
         }
 
+        //Display the summary that corresponds to the cow selected in the search bar
         private void cbxSearchBar_SelectedIndexChanged(object sender, EventArgs e)
         {
             rtbDisplaySearchedCowSum.Text = fm.GetCowSummary(cbxSearchBar.Text);

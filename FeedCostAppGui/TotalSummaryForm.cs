@@ -19,6 +19,7 @@ namespace FeedCostAppGui
             this.fm = fm;
             InitializeComponent();
 
+            //Display the summary for all cows added
             rtbSumStatsAllCow.Text = fm.DisplayTotalSummary();
         }
 

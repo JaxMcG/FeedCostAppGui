@@ -52,6 +52,7 @@ namespace FeedCostAppGui
             this.rtbSumStatsPerCow.Size = new System.Drawing.Size(270, 426);
             this.rtbSumStatsPerCow.TabIndex = 1;
             this.rtbSumStatsPerCow.Text = "";
+            this.rtbSumStatsPerCow.ReadOnly = true;
             // 
             // btnToHomeScreen
             // 

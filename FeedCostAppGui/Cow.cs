@@ -81,21 +81,22 @@ namespace FeedCostAppGui
             return fPrices * GetDailyFoodConsumed();
         }
 
+        //Calculate the recommended food that the cow should be eating
         public string ReconmendedFoodConsumed()
         {
             string checkFoodConsumed;
 
             if (GetDailyFoodConsumed() < 105)
             {
-                checkFoodConsumed = $"{GetId()} is eating {Math.Round(105 - GetDailyFoodConsumed(), 2)}kg under the reconmended food amount of 105kg - 140kg";
+                checkFoodConsumed = $"{GetId()} is eating {Math.Round(105 - GetDailyFoodConsumed(), 2)}kg under the recommended food amount of 105kg - 140kg";
             }
             else if (GetDailyFoodConsumed() > 140)
             {
-                checkFoodConsumed = $"{GetId()} is eating {Math.Round(GetDailyFoodConsumed() - 140, 2)}kg over the reconmended food amount of 105kg - 140kg";
+                checkFoodConsumed = $"{GetId()} is eating {Math.Round(GetDailyFoodConsumed() - 140, 2)}kg over the recommended food amount of 105kg - 140kg";
             }
             else
             {
-                checkFoodConsumed = $"{GetId()} is eating withing the reconmended food amount of 105kg - 140kg";
+                checkFoodConsumed = $"{GetId()} is eating withing the recommended food amount of 105kg - 140kg";
             }
 
             return checkFoodConsumed;

@@ -39,7 +39,7 @@ namespace FeedCostAppGui
             return foodPrice[priceIndex];
         }
 
-        //
+        //Gets the selected or current cow
         public Cow GetSelectedCow(int selectedCow)
         {
             return cows[selectedCow];
@@ -51,7 +51,7 @@ namespace FeedCostAppGui
             return foodType[cows[selectedCowIndex].GetFoodType()];
         }
 
-        //
+        //Gets the most recent cow added to the list
         public int GetMostRecentCowIndex()
         {
             return cows.Count - 1;
@@ -63,6 +63,7 @@ namespace FeedCostAppGui
             return foodPrice[cows[selectedCowIndex].GetFoodType()];
         }
 
+        //Gets all the cows that have been added
         public List<Cow> GetCows(string breed)
         {
             List<Cow> foundCows = new List<Cow>();
@@ -86,7 +87,7 @@ namespace FeedCostAppGui
             cows[cows.Count - 1].CreateId(cows.Count);
         }
 
-        //
+        //Gets the method that adds the weekly food consumed to a list
         public void AddWeeklyConsumption(int selectedCowIndex, List<float> consumption)
         {         
              cows[selectedCowIndex].AddFoodAmount(consumption);         
@@ -110,22 +111,13 @@ namespace FeedCostAppGui
             return cows[selectedCowIndex].DisplaySingleSummary(GetSelectedPrice(selectedCowIndex), GetFood(selectedCowIndex));
         }
 
+        //Gets the method that calculates the recommended food eaten in the cow class
         public string GetReconmendedFoodConsumed(int selectedCowIndex)
         {
             return cows[selectedCowIndex].ReconmendedFoodConsumed();
         }
 
-        //
-        public List<string> AddSingleSumToList(int selectedCowIndex)
-        {
-            List<string> AllSingleSummaries = new List<string>();
-
-            AllSingleSummaries.Add(cows[selectedCowIndex].DisplaySingleSummary(GetSelectedPrice(selectedCowIndex), GetFood(selectedCowIndex)));
-
-            return AllSingleSummaries;
-        }
-
-        //Return The Index
+        //Return The Index of the selected cow in the list
         public int GetIdIndex(string selectedId)
         {
             int idIndex = 0;
@@ -143,6 +135,7 @@ namespace FeedCostAppGui
             return -1;
         }
 
+        //Gets the method that displys a cows summary from the cow class
         public string GetCowSummary(string id)
         {
             return cows[GetIdIndex(id)].DisplaySingleSummary(GetSelectedPrice(GetIdIndex(id)), GetFood(GetIdIndex(id)));
