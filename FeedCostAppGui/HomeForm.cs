@@ -18,6 +18,9 @@ namespace FeedCostAppGui
         {
             this.fm = fm;
             InitializeComponent();
+
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.BackColor = Color.Transparent;
         }
 
         private void btnAddCow_Click(object sender, EventArgs e)
@@ -40,6 +43,14 @@ namespace FeedCostAppGui
         {
             this.Hide();
             SearchForCowForm myNewForm = new SearchForCowForm(fm);
+            myNewForm.Closed += (s, args) => this.Close();
+            myNewForm.Show();
+        }
+
+        private void btnToSeasonSum_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SeasonSummaryForm myNewForm = new SeasonSummaryForm(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,11 +35,12 @@ namespace FeedCostAppGui
             }
 
             cbxFoodChoice.SelectedIndex = 0;
-        }
+            
+            pcbCowFeedImage.Image = pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/FriesianH.jpeg");
+            this.Controls.Add(pcbCowFeedImage);
 
-        private void lblAddCowTitle_Click(object sender, EventArgs e)
-        {
-
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.BackColor = Color.Transparent;
         }
 
         private void btnToAddFood_Click(object sender, EventArgs e)
@@ -64,7 +66,101 @@ namespace FeedCostAppGui
         {
             //Display the price corresponding to the food chosen
             rtbShowPrice.Text = $"{fm.GetPrice(cbxFoodChoice.SelectedIndex)}";
+
+            if (cbxFoodChoice.SelectedIndex.Equals(0) && cbxBreedChoice.SelectedIndex.Equals(0))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/FriesianH.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(0) && cbxBreedChoice.SelectedIndex.Equals(1))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/JerseyPk.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(0) && cbxBreedChoice.SelectedIndex.Equals(2))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/AyrshirePk.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(1) && cbxBreedChoice.SelectedIndex.Equals(0))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/FriesianM.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(1) && cbxBreedChoice.SelectedIndex.Equals(1))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/JerseyM.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(1) && cbxBreedChoice.SelectedIndex.Equals(2))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/AyrshireM.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(2) && cbxBreedChoice.SelectedIndex.Equals(0))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/FriesianPk.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(2) && cbxBreedChoice.SelectedIndex.Equals(1))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/JerseyH.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/AyrshireH.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
         }
 
+        private void cbxBreedChoice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxFoodChoice.SelectedIndex.Equals(0) && cbxBreedChoice.SelectedIndex.Equals(0))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/FriesianH.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(1) && cbxBreedChoice.SelectedIndex.Equals(0))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/FriesianM.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(2) && cbxBreedChoice.SelectedIndex.Equals(0))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/FriesianPk.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(0) && cbxBreedChoice.SelectedIndex.Equals(1))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/JerseyPk.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(1) && cbxBreedChoice.SelectedIndex.Equals(1))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/JerseyM.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(2) && cbxBreedChoice.SelectedIndex.Equals(1))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/JerseyH.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(0) && cbxBreedChoice.SelectedIndex.Equals(2))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/AyrshirePk.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else if (cbxFoodChoice.SelectedIndex.Equals(1) && cbxBreedChoice.SelectedIndex.Equals(2))
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/AyrshireM.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+            else
+            {
+                pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/AyrshireH.jpeg");
+                this.Controls.Add(pcbCowFeedImage);
+            }
+        }
     }
 }

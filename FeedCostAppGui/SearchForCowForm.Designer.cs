@@ -40,6 +40,7 @@ namespace FeedCostAppGui
             // 
             // cbxSearchBar
             // 
+            this.cbxSearchBar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSearchBar.FormattingEnabled = true;
             this.cbxSearchBar.Location = new System.Drawing.Point(136, 199);
             this.cbxSearchBar.Name = "cbxSearchBar";
@@ -50,6 +51,7 @@ namespace FeedCostAppGui
             // rdbFilterFriesian
             // 
             this.rdbFilterFriesian.AutoSize = true;
+            this.rdbFilterFriesian.ForeColor = System.Drawing.Color.White;
             this.rdbFilterFriesian.Location = new System.Drawing.Point(12, 177);
             this.rdbFilterFriesian.Name = "rdbFilterFriesian";
             this.rdbFilterFriesian.Size = new System.Drawing.Size(61, 17);
@@ -62,6 +64,7 @@ namespace FeedCostAppGui
             // rdbFilterJersey
             // 
             this.rdbFilterJersey.AutoSize = true;
+            this.rdbFilterJersey.ForeColor = System.Drawing.Color.White;
             this.rdbFilterJersey.Location = new System.Drawing.Point(12, 200);
             this.rdbFilterJersey.Name = "rdbFilterJersey";
             this.rdbFilterJersey.Size = new System.Drawing.Size(55, 17);
@@ -74,6 +77,7 @@ namespace FeedCostAppGui
             // rdbFilterAyrshire
             // 
             this.rdbFilterAyrshire.AutoSize = true;
+            this.rdbFilterAyrshire.ForeColor = System.Drawing.Color.White;
             this.rdbFilterAyrshire.Location = new System.Drawing.Point(12, 223);
             this.rdbFilterAyrshire.Name = "rdbFilterAyrshire";
             this.rdbFilterAyrshire.Size = new System.Drawing.Size(62, 17);
@@ -87,6 +91,7 @@ namespace FeedCostAppGui
             // 
             this.lblSearchForCow.AutoSize = true;
             this.lblSearchForCow.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchForCow.ForeColor = System.Drawing.Color.White;
             this.lblSearchForCow.Location = new System.Drawing.Point(40, 43);
             this.lblSearchForCow.Name = "lblSearchForCow";
             this.lblSearchForCow.Size = new System.Drawing.Size(524, 34);
@@ -97,6 +102,7 @@ namespace FeedCostAppGui
             // 
             this.rtbDisplaySearchedCowSum.Location = new System.Drawing.Point(529, 111);
             this.rtbDisplaySearchedCowSum.Name = "rtbDisplaySearchedCowSum";
+            this.rtbDisplaySearchedCowSum.ReadOnly = true;
             this.rtbDisplaySearchedCowSum.Size = new System.Drawing.Size(259, 327);
             this.rtbDisplaySearchedCowSum.TabIndex = 5;
             this.rtbDisplaySearchedCowSum.Text = "";
@@ -115,6 +121,7 @@ namespace FeedCostAppGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FeedCostAppGui.Properties.Resources.desktop_wallpaper_green_farm_vietnam_ultra_high_quality_walls;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnToHomeFromSearch);
             this.Controls.Add(this.rtbDisplaySearchedCowSum);
@@ -123,6 +130,7 @@ namespace FeedCostAppGui
             this.Controls.Add(this.rdbFilterJersey);
             this.Controls.Add(this.rdbFilterFriesian);
             this.Controls.Add(this.cbxSearchBar);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(7)))));
             this.Name = "SearchForCowForm";
             this.Text = "SearchForCowForm";
             this.ResumeLayout(false);

@@ -18,6 +18,7 @@ namespace FeedCostAppGui
         private int foodChoice;
         //Stores the Amount of Food Eaten Daily
         private List<float> dailyFoodAmount = new List<float>();
+        private List<DateTime> dateWhenCowFeed = new List<DateTime>();
 
         //Constructor
         public Cow(string breed, DateTime dob, int foodChoice)
@@ -28,12 +29,51 @@ namespace FeedCostAppGui
             this.foodChoice = foodChoice;
         }
 
+        public List<float> StoreFoodConsumedWithDate()
+        {
+            List<float> seasonConsumption = new List<float>() { 0, 0, 0, 0 };
+
+            int yearLoop = 365;
+
+            if (dateWhenCowFeed.Count < 365)
+            {
+                yearLoop = dateWhenCowFeed.Count;
+            }
+
+            for (int i = dateWhenCowFeed.Count - yearLoop;  i < dateWhenCowFeed.Count; i++)
+            {
+                if (dateWhenCowFeed[i].Month == 12 || dateWhenCowFeed[i].Month >= 1 && dateWhenCowFeed[i].Month <= 2)
+                {
+                    seasonConsumption[0] += dailyFoodAmount[i];
+                }
+                else if (dateWhenCowFeed[i].Month >= 3 && dateWhenCowFeed[i].Month <= 5)
+                {
+                    seasonConsumption[1] += dailyFoodAmount[i];
+                }
+                else if (dateWhenCowFeed[i].Month >= 6 && dateWhenCowFeed[i].Month <= 8)
+                {
+                    seasonConsumption[2] += dailyFoodAmount[i];
+                }
+                else
+                {
+                    seasonConsumption[3] += dailyFoodAmount[i];
+                }
+            }
+
+
+            return seasonConsumption;
+        }
+
         //Add The Food Eaten Per Day To An Overall List
-        public void AddFoodAmount(List<float> dailyFoodAmount)
+        public void AddFoodAmount(List<float> dailyFoodAmount, List<DateTime> dates)
         {
             foreach (var dailyConsumption in dailyFoodAmount)
             {
                 this.dailyFoodAmount.Add(dailyConsumption);
+            }
+            foreach (var date in dates)
+            {
+                this.dateWhenCowFeed.Add(date);
             }
             
         }
@@ -50,6 +90,7 @@ namespace FeedCostAppGui
             id = "C" + breed.Substring(0, 1).ToUpper() + breed.Substring(1, 2).ToLower() + cowCount + "-" + dob.Year;
         }
 
+        //Gets and returns the id for each animal 
         public string GetId()
         {
             return id;

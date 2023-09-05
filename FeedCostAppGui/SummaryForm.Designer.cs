@@ -39,6 +39,7 @@ namespace FeedCostAppGui
             // 
             this.lblSummaryTitle.AutoSize = true;
             this.lblSummaryTitle.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSummaryTitle.ForeColor = System.Drawing.Color.White;
             this.lblSummaryTitle.Location = new System.Drawing.Point(398, 41);
             this.lblSummaryTitle.Name = "lblSummaryTitle";
             this.lblSummaryTitle.Size = new System.Drawing.Size(283, 34);
@@ -52,7 +53,6 @@ namespace FeedCostAppGui
             this.rtbSumStatsPerCow.Size = new System.Drawing.Size(270, 426);
             this.rtbSumStatsPerCow.TabIndex = 1;
             this.rtbSumStatsPerCow.Text = "";
-            this.rtbSumStatsPerCow.ReadOnly = true;
             // 
             // btnToHomeScreen
             // 
@@ -78,13 +78,14 @@ namespace FeedCostAppGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FeedCostAppGui.Properties.Resources.desktop_wallpaper_green_farm_vietnam_ultra_high_quality_walls;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnToTotalSumFromSingleSum);
             this.Controls.Add(this.btnToHomeScreen);
             this.Controls.Add(this.rtbSumStatsPerCow);
             this.Controls.Add(this.lblSummaryTitle);
             this.Name = "SummaryForm";
-            this.Text = "SummaryForm";
+            this.Text = "7";
             this.ResumeLayout(false);
             this.PerformLayout();
 

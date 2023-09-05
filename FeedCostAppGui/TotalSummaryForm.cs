@@ -21,6 +21,9 @@ namespace FeedCostAppGui
 
             //Display the summary for all cows added
             rtbSumStatsAllCow.Text = fm.DisplayTotalSummary();
+
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.BackColor = Color.Transparent;
         }
 
         private void btnTotalSumToHome_Click(object sender, EventArgs e)

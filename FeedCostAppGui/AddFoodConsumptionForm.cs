@@ -19,27 +19,54 @@ namespace FeedCostAppGui
         {
             this.fm = fm;
             this.selectedCow = cowIndex;
-            InitializeComponent();            
+            InitializeComponent();
+
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.BackColor = Color.Transparent;
         }
 
         private void btnToSummary_Click(object sender, EventArgs e)
         {
+            if (CheckDate())
+            {
+                //Add all the daily consumptions into one list
+                List<float> weeklyConsumption = new List<float>();
+                float foodEaten1 = (float)Convert.ToDouble(nudFoodConsumed1.Value);
+                float foodEaten2 = (float)Convert.ToDouble(nudFoodConsumed2.Value);
+                float foodEaten3 = (float)Convert.ToDouble(nudFoodConsumed3.Value);
+                float foodEaten4 = (float)Convert.ToDouble(nudFoodConsumed4.Value);
+                float foodEaten5 = (float)Convert.ToDouble(nudFoodConsumed5.Value);
+                float foodEaten6 = (float)Convert.ToDouble(nudFoodConsumed6.Value);
+                float foodEaten7 = (float)Convert.ToDouble(nudFoodConsumed7.Value);
 
-            //Add all the daily consumptions into one list
-            List<float> weeklyConsumption = new List<float>();
-            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed1));
-            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed2));
-            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed3));
-            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed4));
-            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed5));
-            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed6));
-            weeklyConsumption.Add((float)Convert.ToDouble(nudFoodConsumed7));
+                List<DateTime> dateWhenFoodConsumed = new List<DateTime>();
 
-            fm.AddWeeklyConsumption(selectedCow, weeklyConsumption);
+                for (int i = -6; i < 1; i++)
+                {
+                    dateWhenFoodConsumed.Add(dtpFoodConsumptionDay7.Value.AddDays(i));
+                }
 
-            fm.GetWeeksConsumption(selectedCow);
+                weeklyConsumption.Add(foodEaten1);
+                weeklyConsumption.Add(foodEaten2);
+                weeklyConsumption.Add(foodEaten3);
+                weeklyConsumption.Add(foodEaten4);
+                weeklyConsumption.Add(foodEaten5);
+                weeklyConsumption.Add(foodEaten6);
+                weeklyConsumption.Add(foodEaten7);
 
-            fm.GetConsumptionCost(selectedCow);
+                fm.AddWeeklyConsumption(selectedCow, weeklyConsumption, dateWhenFoodConsumed);
+
+                fm.GetWeeksConsumption(selectedCow);
+
+                fm.GetConsumptionCost(selectedCow);
+
+
+
+                this.Hide();
+                SummaryForm myNewForm = new SummaryForm(fm, selectedCow);
+                myNewForm.Closed += (s, args) => this.Close();
+                myNewForm.Show();
+            }            
         }
 
         private void btnCancelProcess_Click(object sender, EventArgs e)
@@ -48,6 +75,22 @@ namespace FeedCostAppGui
             HomeForm myNewForm = new HomeForm(fm);
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
-        }      
+        }
+
+        private void dtpFoodConsumptionDay7_ValueChanged(object sender, EventArgs e)
+        {
+            CheckDate();
+        }
+
+        private bool CheckDate()
+        {
+            if (dtpFoodConsumptionDay7.Value.DayOfWeek != 0)
+            {
+                MessageBox.Show("Error: Please select a Sunday");
+                return false;
+            }
+
+            return true;
+        }
     }
 }

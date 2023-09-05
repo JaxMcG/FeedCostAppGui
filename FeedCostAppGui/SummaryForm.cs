@@ -24,6 +24,9 @@ namespace FeedCostAppGui
             //Display the summary for that cow
             rtbSumStatsPerCow.Text = fm.GetSummary(selectedCow);
             rtbSumStatsPerCow.Text += fm.GetReconmendedFoodConsumed(selectedCow);
+
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.BackColor = Color.Transparent;
         }
 
         private void SummaryForm_Load(object sender, EventArgs e)

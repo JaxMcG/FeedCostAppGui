@@ -74,6 +74,12 @@
     <Compile Include="SearchForCowForm.Designer.cs">
       <DependentUpon>SearchForCowForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SeasonSummaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeasonSummaryForm.Designer.cs">
+      <DependentUpon>SeasonSummaryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SummaryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,9 +109,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SearchForCowForm.resx">
       <DependentUpon>SearchForCowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeasonSummaryForm.resx">
+      <DependentUpon>SeasonSummaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SummaryForm.resx">
       <DependentUpon>SummaryForm.cs</DependentUpon>
@@ -125,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop-wallpaper-green-farm-vietnam-ultra-high-quality-walls.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

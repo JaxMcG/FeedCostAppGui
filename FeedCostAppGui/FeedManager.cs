@@ -88,9 +88,9 @@ namespace FeedCostAppGui
         }
 
         //Gets the method that adds the weekly food consumed to a list
-        public void AddWeeklyConsumption(int selectedCowIndex, List<float> consumption)
+        public void AddWeeklyConsumption(int selectedCowIndex, List<float> consumption, List<DateTime> dates)
         {         
-             cows[selectedCowIndex].AddFoodAmount(consumption);         
+             cows[selectedCowIndex].AddFoodAmount(consumption, dates);         
         }
 
         //Passes The Food Consumed From Cow Class Into FeedManager Class
@@ -139,6 +139,22 @@ namespace FeedCostAppGui
         public string GetCowSummary(string id)
         {
             return cows[GetIdIndex(id)].DisplaySingleSummary(GetSelectedPrice(GetIdIndex(id)), GetFood(GetIdIndex(id)));
+        }
+
+        public float[,] CalculateSeasonConsumption()
+        {
+            float[,] seasonConsumption = new float[3,4];
+
+            foreach (var cow in cows)
+            {
+
+                for (int i = 0; i < 4; i++)
+                {
+                    seasonConsumption[cow.GetFoodType(),i] += cow.StoreFoodConsumedWithDate()[i];
+                }
+            }
+
+            return seasonConsumption;
         }
 
         //Calculate the Total Food Consumed By Every Cow for the Week

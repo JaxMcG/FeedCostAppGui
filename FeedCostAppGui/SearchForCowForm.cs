@@ -18,6 +18,9 @@ namespace FeedCostAppGui
         {
             this.fm = fm;
             InitializeComponent();
+
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.BackColor = Color.Transparent;
         }
 
         private void FilterSearch(string breed)
@@ -25,9 +28,7 @@ namespace FeedCostAppGui
             foreach (var cow in fm.GetCows(breed))
             {
                 cbxSearchBar.Items.Add(cow.GetId());
-            }
-
-            
+            }           
         }
 
         //Displaying all Friesian's only in the combo box/search bar

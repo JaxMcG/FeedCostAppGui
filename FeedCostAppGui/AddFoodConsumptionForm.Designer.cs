@@ -46,6 +46,8 @@ namespace FeedCostAppGui
             this.nudFoodConsumed5 = new System.Windows.Forms.NumericUpDown();
             this.nudFoodConsumed6 = new System.Windows.Forms.NumericUpDown();
             this.nudFoodConsumed7 = new System.Windows.Forms.NumericUpDown();
+            this.dtpFoodConsumptionDay7 = new System.Windows.Forms.DateTimePicker();
+            this.lblDay7Date = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFoodConsumed3)).BeginInit();
@@ -58,6 +60,7 @@ namespace FeedCostAppGui
             // lblFoodConsumptionTitle
             // 
             this.lblFoodConsumptionTitle.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoodConsumptionTitle.ForeColor = System.Drawing.Color.White;
             this.lblFoodConsumptionTitle.Location = new System.Drawing.Point(12, 9);
             this.lblFoodConsumptionTitle.Name = "lblFoodConsumptionTitle";
             this.lblFoodConsumptionTitle.Size = new System.Drawing.Size(776, 73);
@@ -78,6 +81,7 @@ namespace FeedCostAppGui
             // lblFoodAmount1
             // 
             this.lblFoodAmount1.AutoSize = true;
+            this.lblFoodAmount1.ForeColor = System.Drawing.Color.White;
             this.lblFoodAmount1.Location = new System.Drawing.Point(12, 152);
             this.lblFoodAmount1.Name = "lblFoodAmount1";
             this.lblFoodAmount1.Size = new System.Drawing.Size(56, 13);
@@ -87,6 +91,7 @@ namespace FeedCostAppGui
             // lblFoodAmount2
             // 
             this.lblFoodAmount2.AutoSize = true;
+            this.lblFoodAmount2.ForeColor = System.Drawing.Color.White;
             this.lblFoodAmount2.Location = new System.Drawing.Point(12, 230);
             this.lblFoodAmount2.Name = "lblFoodAmount2";
             this.lblFoodAmount2.Size = new System.Drawing.Size(56, 13);
@@ -96,6 +101,7 @@ namespace FeedCostAppGui
             // lblFoodAmount3
             // 
             this.lblFoodAmount3.AutoSize = true;
+            this.lblFoodAmount3.ForeColor = System.Drawing.Color.White;
             this.lblFoodAmount3.Location = new System.Drawing.Point(12, 308);
             this.lblFoodAmount3.Name = "lblFoodAmount3";
             this.lblFoodAmount3.Size = new System.Drawing.Size(56, 13);
@@ -105,6 +111,7 @@ namespace FeedCostAppGui
             // lblFoodAmount4
             // 
             this.lblFoodAmount4.AutoSize = true;
+            this.lblFoodAmount4.ForeColor = System.Drawing.Color.White;
             this.lblFoodAmount4.Location = new System.Drawing.Point(12, 386);
             this.lblFoodAmount4.Name = "lblFoodAmount4";
             this.lblFoodAmount4.Size = new System.Drawing.Size(56, 13);
@@ -114,6 +121,7 @@ namespace FeedCostAppGui
             // lblFoodAmount5
             // 
             this.lblFoodAmount5.AutoSize = true;
+            this.lblFoodAmount5.ForeColor = System.Drawing.Color.White;
             this.lblFoodAmount5.Location = new System.Drawing.Point(221, 152);
             this.lblFoodAmount5.Name = "lblFoodAmount5";
             this.lblFoodAmount5.Size = new System.Drawing.Size(56, 13);
@@ -123,6 +131,7 @@ namespace FeedCostAppGui
             // lblFoodAmount6
             // 
             this.lblFoodAmount6.AutoSize = true;
+            this.lblFoodAmount6.ForeColor = System.Drawing.Color.White;
             this.lblFoodAmount6.Location = new System.Drawing.Point(221, 230);
             this.lblFoodAmount6.Name = "lblFoodAmount6";
             this.lblFoodAmount6.Size = new System.Drawing.Size(56, 13);
@@ -132,6 +141,7 @@ namespace FeedCostAppGui
             // lblFoodAmount7
             // 
             this.lblFoodAmount7.AutoSize = true;
+            this.lblFoodAmount7.ForeColor = System.Drawing.Color.White;
             this.lblFoodAmount7.Location = new System.Drawing.Point(221, 308);
             this.lblFoodAmount7.Name = "lblFoodAmount7";
             this.lblFoodAmount7.Size = new System.Drawing.Size(56, 13);
@@ -151,6 +161,11 @@ namespace FeedCostAppGui
             // nudFoodConsumed1
             // 
             this.nudFoodConsumed1.DecimalPlaces = 2;
+            this.nudFoodConsumed1.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.nudFoodConsumed1.Location = new System.Drawing.Point(12, 168);
             this.nudFoodConsumed1.Name = "nudFoodConsumed1";
             this.nudFoodConsumed1.Size = new System.Drawing.Size(120, 20);
@@ -159,6 +174,11 @@ namespace FeedCostAppGui
             // nudFoodConsumed2
             // 
             this.nudFoodConsumed2.DecimalPlaces = 2;
+            this.nudFoodConsumed2.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.nudFoodConsumed2.Location = new System.Drawing.Point(12, 246);
             this.nudFoodConsumed2.Name = "nudFoodConsumed2";
             this.nudFoodConsumed2.Size = new System.Drawing.Size(120, 20);
@@ -167,6 +187,11 @@ namespace FeedCostAppGui
             // nudFoodConsumed3
             // 
             this.nudFoodConsumed3.DecimalPlaces = 2;
+            this.nudFoodConsumed3.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.nudFoodConsumed3.Location = new System.Drawing.Point(12, 324);
             this.nudFoodConsumed3.Name = "nudFoodConsumed3";
             this.nudFoodConsumed3.Size = new System.Drawing.Size(120, 20);
@@ -175,6 +200,11 @@ namespace FeedCostAppGui
             // nudFoodConsumed4
             // 
             this.nudFoodConsumed4.DecimalPlaces = 2;
+            this.nudFoodConsumed4.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.nudFoodConsumed4.Location = new System.Drawing.Point(12, 402);
             this.nudFoodConsumed4.Name = "nudFoodConsumed4";
             this.nudFoodConsumed4.Size = new System.Drawing.Size(120, 20);
@@ -183,6 +213,11 @@ namespace FeedCostAppGui
             // nudFoodConsumed5
             // 
             this.nudFoodConsumed5.DecimalPlaces = 2;
+            this.nudFoodConsumed5.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.nudFoodConsumed5.Location = new System.Drawing.Point(224, 168);
             this.nudFoodConsumed5.Name = "nudFoodConsumed5";
             this.nudFoodConsumed5.Size = new System.Drawing.Size(120, 20);
@@ -191,6 +226,11 @@ namespace FeedCostAppGui
             // nudFoodConsumed6
             // 
             this.nudFoodConsumed6.DecimalPlaces = 2;
+            this.nudFoodConsumed6.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.nudFoodConsumed6.Location = new System.Drawing.Point(224, 246);
             this.nudFoodConsumed6.Name = "nudFoodConsumed6";
             this.nudFoodConsumed6.Size = new System.Drawing.Size(120, 20);
@@ -199,16 +239,42 @@ namespace FeedCostAppGui
             // nudFoodConsumed7
             // 
             this.nudFoodConsumed7.DecimalPlaces = 2;
+            this.nudFoodConsumed7.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.nudFoodConsumed7.Location = new System.Drawing.Point(224, 324);
             this.nudFoodConsumed7.Name = "nudFoodConsumed7";
             this.nudFoodConsumed7.Size = new System.Drawing.Size(120, 20);
             this.nudFoodConsumed7.TabIndex = 25;
             // 
+            // dtpFoodConsumptionDay7
+            // 
+            this.dtpFoodConsumptionDay7.Location = new System.Drawing.Point(428, 168);
+            this.dtpFoodConsumptionDay7.Name = "dtpFoodConsumptionDay7";
+            this.dtpFoodConsumptionDay7.Size = new System.Drawing.Size(200, 20);
+            this.dtpFoodConsumptionDay7.TabIndex = 26;
+            this.dtpFoodConsumptionDay7.ValueChanged += new System.EventHandler(this.dtpFoodConsumptionDay7_ValueChanged);
+            // 
+            // lblDay7Date
+            // 
+            this.lblDay7Date.AutoSize = true;
+            this.lblDay7Date.ForeColor = System.Drawing.Color.White;
+            this.lblDay7Date.Location = new System.Drawing.Point(425, 152);
+            this.lblDay7Date.Name = "lblDay7Date";
+            this.lblDay7Date.Size = new System.Drawing.Size(122, 13);
+            this.lblDay7Date.TabIndex = 27;
+            this.lblDay7Date.Text = "Enter the Date on Day 7";
+            // 
             // AddFoodConsumptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FeedCostAppGui.Properties.Resources.desktop_wallpaper_green_farm_vietnam_ultra_high_quality_walls;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblDay7Date);
+            this.Controls.Add(this.dtpFoodConsumptionDay7);
             this.Controls.Add(this.nudFoodConsumed7);
             this.Controls.Add(this.nudFoodConsumed6);
             this.Controls.Add(this.nudFoodConsumed5);
@@ -259,5 +325,7 @@ namespace FeedCostAppGui
         private System.Windows.Forms.NumericUpDown nudFoodConsumed5;
         private System.Windows.Forms.NumericUpDown nudFoodConsumed6;
         private System.Windows.Forms.NumericUpDown nudFoodConsumed7;
+        private System.Windows.Forms.DateTimePicker dtpFoodConsumptionDay7;
+        private System.Windows.Forms.Label lblDay7Date;
     }
 }
