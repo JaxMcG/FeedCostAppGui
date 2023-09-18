@@ -26,6 +26,7 @@ namespace FeedCostAppGui
                 cbxBreedChoice.Items.Add(breed);
             }
 
+            //Sets the default value of the cbx to index 0 (Friesian)
             cbxBreedChoice.SelectedIndex = 0;
 
             //Populate the Combo Box with foods
@@ -34,18 +35,21 @@ namespace FeedCostAppGui
                 cbxFoodChoice.Items.Add(food);
             }
 
+            //Sets the default value of the cbx to index 0 (Palm Kernel)
             cbxFoodChoice.SelectedIndex = 0;
             
+            //Sets the default image to Friesian and palm kernel
             pcbCowFeedImage.Image = pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/FriesianH.jpeg");
             this.Controls.Add(pcbCowFeedImage);
 
+            //Sets the background colour of the labels to transparent
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.BackColor = Color.Transparent;
         }
 
+        //Button which takes the user to the next form to add the consumption as well as add the cows properties
         private void btnToAddFood_Click(object sender, EventArgs e)
-        {
-            
+        {           
             fm.AddCow(new Cow(cbxBreedChoice.Text, dtpDateOfBirth.Value, cbxFoodChoice.SelectedIndex));
 
             this.Hide();
@@ -54,6 +58,7 @@ namespace FeedCostAppGui
             myNewForm.Show();
         }
 
+        //Button which takes the user back to the home screen and cancels the process
         private void btnBackToHome_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -67,6 +72,7 @@ namespace FeedCostAppGui
             //Display the price corresponding to the food chosen
             rtbShowPrice.Text = $"{fm.GetPrice(cbxFoodChoice.SelectedIndex)}";
 
+            //Checks to see the selected index of the breed cbx when changed and setting the image to the corresponding image
             if (cbxFoodChoice.SelectedIndex.Equals(0) && cbxBreedChoice.SelectedIndex.Equals(0))
             {
                 pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/FriesianH.jpeg");
@@ -116,6 +122,7 @@ namespace FeedCostAppGui
 
         private void cbxBreedChoice_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Checks to see the selected index of the foodtype cbx when changed and setting the image to the corresponding image
             if (cbxFoodChoice.SelectedIndex.Equals(0) && cbxBreedChoice.SelectedIndex.Equals(0))
             {
                 pcbCowFeedImage.Image = Image.FromFile("C:/Users/jacmcgr/OneDrive - Central Hawkes Bay College/CSD 2023/FriesianH.jpeg");

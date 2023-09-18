@@ -19,10 +19,12 @@ namespace FeedCostAppGui
             this.fm = fm;
             InitializeComponent();
 
+            //Sets the background colour of the labels to transparent
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.BackColor = Color.Transparent;
         }
 
+        //Button which takes the user to the next form to add a cow
         private void btnAddCow_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -31,6 +33,7 @@ namespace FeedCostAppGui
             myNewForm.Show();
         }
 
+        //Button which takes the user to the form displaying the total summary
         private void btnToTotalSummary_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -39,6 +42,7 @@ namespace FeedCostAppGui
             myNewForm.Show();
         }
 
+        //Button which takes the user to the form which allows them to search for a cow
         private void btnSearchCow_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -47,6 +51,7 @@ namespace FeedCostAppGui
             myNewForm.Show();
         }
 
+        //Button which takes the user to the form which displays the consumptio for each season
         private void btnToSeasonSum_Click(object sender, EventArgs e)
         {
             this.Hide();

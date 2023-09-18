@@ -85,7 +85,7 @@ namespace FeedCostAppGui
             this.Controls.Add(this.rtbSumStatsPerCow);
             this.Controls.Add(this.lblSummaryTitle);
             this.Name = "SummaryForm";
-            this.Text = "7";
+            this.Text = "77";
             this.ResumeLayout(false);
             this.PerformLayout();
 

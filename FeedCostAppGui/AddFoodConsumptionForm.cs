@@ -21,10 +21,12 @@ namespace FeedCostAppGui
             this.selectedCow = cowIndex;
             InitializeComponent();
 
+            //Sets the background colour of the labels to transparent
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.BackColor = Color.Transparent;
         }
 
+        //Button which takes the user to the summary form and calculates the food consumed and cost
         private void btnToSummary_Click(object sender, EventArgs e)
         {
             if (CheckDate())
@@ -69,6 +71,7 @@ namespace FeedCostAppGui
             }            
         }
 
+        //Button which takes the user back to the home form and cancels the process
         private void btnCancelProcess_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -77,6 +80,7 @@ namespace FeedCostAppGui
             myNewForm.Show();
         }
 
+        //Checks the date when it is changed
         private void dtpFoodConsumptionDay7_ValueChanged(object sender, EventArgs e)
         {
             CheckDate();

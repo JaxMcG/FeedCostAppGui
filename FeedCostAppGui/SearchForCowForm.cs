@@ -19,10 +19,12 @@ namespace FeedCostAppGui
             this.fm = fm;
             InitializeComponent();
 
+            //Sets the background colour of the labels to transparent
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.BackColor = Color.Transparent;
         }
 
+        //Filters the items in the cbx corresponding to the selected radio button
         private void FilterSearch(string breed)
         {
             foreach (var cow in fm.GetCows(breed))
@@ -61,6 +63,7 @@ namespace FeedCostAppGui
             }
         }
 
+        //Button which takes the user back to the home screen
         private void btnToHomeFromSearch_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -25,6 +25,7 @@ namespace FeedCostAppGui
             rtbSumStatsPerCow.Text = fm.GetSummary(selectedCow);
             rtbSumStatsPerCow.Text += fm.GetReconmendedFoodConsumed(selectedCow);
 
+            //Sets the background colour of the labels to transparent
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.BackColor = Color.Transparent;
         }
@@ -34,6 +35,7 @@ namespace FeedCostAppGui
             
         }
 
+        //Button which takes the user back to the home screen
         private void btnToHomeScreen_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -42,6 +44,7 @@ namespace FeedCostAppGui
             myNewForm.Show();
         }
 
+        //Button which takes the user to the form which displays the total summary
         private void btnToTotalSumFromSingleSum_Click(object sender, EventArgs e)
         {
             this.Hide();

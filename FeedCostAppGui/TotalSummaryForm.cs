@@ -22,10 +22,12 @@ namespace FeedCostAppGui
             //Display the summary for all cows added
             rtbSumStatsAllCow.Text = fm.DisplayTotalSummary();
 
+            //Sets the background colour of the labels to transparent
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.BackColor = Color.Transparent;
         }
 
+        //Button which takes the user back to the home screen
         private void btnTotalSumToHome_Click(object sender, EventArgs e)
         {
             this.Hide();
