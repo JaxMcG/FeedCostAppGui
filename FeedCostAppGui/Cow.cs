@@ -29,6 +29,7 @@ namespace FeedCostAppGui
             this.foodChoice = foodChoice;
         }
 
+        //Storing the food consumed with the date it was consumed to calculate the season consumption
         public List<float> StoreFoodConsumedWithDate()
         {
             List<float> seasonConsumption = new List<float>() { 0, 0, 0, 0 };

@@ -31,7 +31,7 @@ namespace FeedCostAppGui
         {
             if (CheckDate())
             {
-                //Add all the daily consumptions into one list
+                //Convert every numeric up and down counter value to a float
                 List<float> weeklyConsumption = new List<float>();
                 float foodEaten1 = (float)Convert.ToDouble(nudFoodConsumed1.Value);
                 float foodEaten2 = (float)Convert.ToDouble(nudFoodConsumed2.Value);
@@ -43,11 +43,13 @@ namespace FeedCostAppGui
 
                 List<DateTime> dateWhenFoodConsumed = new List<DateTime>();
 
+                //Adds the food consumed with the date
                 for (int i = -6; i < 1; i++)
                 {
                     dateWhenFoodConsumed.Add(dtpFoodConsumptionDay7.Value.AddDays(i));
                 }
 
+                //Adds the weeks consumption to a list
                 weeklyConsumption.Add(foodEaten1);
                 weeklyConsumption.Add(foodEaten2);
                 weeklyConsumption.Add(foodEaten3);
@@ -56,14 +58,17 @@ namespace FeedCostAppGui
                 weeklyConsumption.Add(foodEaten6);
                 weeklyConsumption.Add(foodEaten7);
 
+                
                 fm.AddWeeklyConsumption(selectedCow, weeklyConsumption, dateWhenFoodConsumed);
 
+                //Gets the weeks consumption
                 fm.GetWeeksConsumption(selectedCow);
 
+                //Gets the cost of the weeks consumption
                 fm.GetConsumptionCost(selectedCow);
 
 
-
+                //When clicked go to the summary form
                 this.Hide();
                 SummaryForm myNewForm = new SummaryForm(fm, selectedCow);
                 myNewForm.Closed += (s, args) => this.Close();
@@ -86,6 +91,7 @@ namespace FeedCostAppGui
             CheckDate();
         }
 
+        //Checks to see if the new date is a sunday otherwise display an error message
         private bool CheckDate()
         {
             if (dtpFoodConsumptionDay7.Value.DayOfWeek != 0)

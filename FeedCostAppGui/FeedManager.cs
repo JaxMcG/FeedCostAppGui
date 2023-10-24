@@ -9,10 +9,9 @@ namespace FeedCostAppGui
         public class FeedManager
     {
         private List<Cow> cows = new List<Cow>();
-        private List<string> breedTypes = new List<string>() { "Friesian", "Jersey", "Ayrshire" };
-        private List<string> foodType = new List<string>() { "Palm Kernal", "Maize", "Hay" };
-        private List<float> foodPrice = new List<float>() { 1.69625f, 0.4556f, 0.113f };
-        private List<float> newFoodPrice = new List<float>();
+        private readonly List<string> BREEDTYPES = new List<string>() { "Friesian", "Jersey", "Ayrshire" };
+        private readonly List<string> FOODTYPE = new List<string>() { "Palm Kernal", "Maize", "Hay" };
+        private readonly List<float> FOODPRICE = new List<float>() { 1.69625f, 0.4556f, 0.113f };
         private List<string> AddSum = new List<string>();
 
         //Constructor
@@ -24,19 +23,19 @@ namespace FeedCostAppGui
         //Gets The List Of Breeds
         public List<string> GetBreeds()
         {
-            return breedTypes;
+            return BREEDTYPES;
         }
 
         //Gets The List Of Foods
         public List<string> GetFoods() 
         {
-            return foodType;
+            return FOODTYPE;
         }
 
         //Gets The Price Related To The Food
         public float GetPrice(int priceIndex)
         {
-            return foodPrice[priceIndex];
+            return FOODPRICE[priceIndex];
         }
 
         //Gets the selected or current cow
@@ -48,7 +47,7 @@ namespace FeedCostAppGui
         //Passes The Food From Cow Class Into FeedManager Class
         public string GetFood(int selectedCowIndex)
         {
-            return foodType[cows[selectedCowIndex].GetFoodType()];
+            return FOODTYPE[cows[selectedCowIndex].GetFoodType()];
         }
 
         //Gets the most recent cow added to the list
@@ -60,7 +59,7 @@ namespace FeedCostAppGui
         //Passes The Price From Cow Class Into FeedManager Class
         public float GetSelectedPrice(int selectedCowIndex)
         {
-            return foodPrice[cows[selectedCowIndex].GetFoodType()];
+            return FOODPRICE[cows[selectedCowIndex].GetFoodType()];
         }
 
         //Gets all the cows that have been added
@@ -177,16 +176,10 @@ namespace FeedCostAppGui
 
             for (int index = 0; index < 3; index++)
             {
-                totalFoodCost += foodPrice[index] * CalculateTotalFoodConsumed()[index];
+                totalFoodCost += FOODPRICE[index] * CalculateTotalFoodConsumed()[index];
             }
 
             return (float)Math.Round(totalFoodCost, 2);
-        }
-
-        //Change the Prices of Each type of Food
-        public void ChangeFoodPrices()
-        {
-            foodPrice = newFoodPrice;
         }
 
         //Display a Summary of the Total Food Eaten Plus the Cost, and Recommended Food Eaten (All Animals, Not Just One)
@@ -195,9 +188,9 @@ namespace FeedCostAppGui
             string totalSummary = $"Total Summary\n" +
                 $"Total Food Consumed: \n";
 
-            for (int i = 0; i < foodType.Count; i++)
+            for (int i = 0; i < FOODTYPE.Count; i++)
             {
-                totalSummary += $"{foodType[i]}: {CalculateTotalFoodConsumed()[i]}kg\n";
+                totalSummary += $"{FOODTYPE[i]}: {CalculateTotalFoodConsumed()[i]}kg\n";
             }
 
                 totalSummary += $"Total Cost: ${CalculateTotalFoodCost()}\n\n";

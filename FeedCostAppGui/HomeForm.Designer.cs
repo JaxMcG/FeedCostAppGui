@@ -104,7 +104,7 @@ namespace FeedCostAppGui
             this.Controls.Add(this.lblHomeTitle);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "HomeForm";
-            this.Text = "Form1";
+            this.Text = "8";
             this.ResumeLayout(false);
 
         }
